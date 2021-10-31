@@ -1,0 +1,85 @@
+/*Corporate Design-Farben
+gruen: #76B900 
+blau: #0082D1
+orange: #FF5F00
+grau: #AFAFAF*/
+
+/*Verdana als Schriftart für das ganze Dokument, laut Beispiel ohne Serifen*/
+body {
+    font-family: Verdana, sans-serif;
+}
+
+/*<header>: HTW-Grau als Hintergrundfarbe, HTW-Orange als Schriftfarbe und der Text zentriert*/
+header {
+    background-color:#AFAFAF;
+    color: #FF5F00;
+    text-align:center;
+}
+
+h2 {
+    font-variant:small-caps; /*Kapitaelchen*/
+    font-weight: bolder;
+}
+
+/*<nav>-Feld hat einen Abstand nach oben und nach unten von jeweils 50px*/
+nav {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+/*a-Elemente aka Links*/
+nav a {
+    text-decoration:none; /* _nicht_ unterstrichen*/
+    background-color:#0082D1; /*erzeugt button-ähnliche Box*/
+    color:white;
+    font-weight: bold;
+    padding:7px; /*bestimmt Groesse der "Buttons"*/
+    /*mit grauem Rand, abgerundete Ecken erzeugen mit border*/
+    border: 1px solid #AFAFAF;
+    border-radius: 8px; /*je groesser der Wert, desto runder die Ecken*/
+}
+
+nav a:hover {
+    background-color:#AFAFAF;
+    color:#FF5F00;
+}
+
+/*nav a:visited {
+	background-color:#AFAFAF;
+    color:#0082D1;*/
+}
+
+table {
+    border-collapse:collapse; /*Rahmen aussen*/
+    box-shadow: 5px 5px 5px 5px darkgray; /*Schatten: h-offset(Abstand) v-offset blur spread(Radius)*/
+    width: 80%; /*Breite von 80% des <section>-Elements*/
+    margin-left:auto; /* zentriert Tabelle*/
+    margin-right:auto;
+}
+
+table, th, td {
+    border:1px solid black; /*Gitterlinien innen: Dicke Form Farbe */
+    padding:5px; /*Abstand zu Gitterlinien*/
+}
+
+/*Spaltenüberschriften in weiß, mit HTW-grünem Hintergrund*/
+th {
+    background-color:#76B900;
+    color:white;
+}
+
+
+h4 {
+	margin-left: 8%;
+	margin-bottom: 10px;
+}
+
+footer {
+    background-color:#FF5F00;
+    color: black;
+    text-align:center;
+    padding:5px;
+    margin-top:20px;
+    margin-bottom:20px;
+}
+
