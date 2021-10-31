@@ -34,7 +34,7 @@ nav a {
     color:white;
     font-weight: bold;
     padding:7px; /*bestimmt Groesse der "Buttons"*/
-    /*mit grauem Rand, abgerundete Ecken erzeugen mit border*/
+    /*mit grauem Rand, abgerundete Ecken erzeugen mit border-radius*/
     border: 1px solid #AFAFAF;
     border-radius: 8px; /*je groesser der Wert, desto runder die Ecken*/
 }
@@ -53,13 +53,12 @@ table {
     border-collapse:collapse; /*Rahmen aussen*/
     box-shadow: 5px 5px 5px 5px darkgray; /*Schatten: h-offset(Abstand) v-offset blur spread(Radius)*/
     width: 80%; /*Breite von 80% des <section>-Elements*/
-    margin-left:auto; /* zentriert Tabelle*/
-    margin-right:auto;
 }
 
 table, th, td {
     border:1px solid black; /*Gitterlinien innen: Dicke Form Farbe */
     padding:5px; /*Abstand zu Gitterlinien*/
+    margin-left: 10%; /* zentriert Tabelle*/
 }
 
 /*Spaltenüberschriften in weiß, mit HTW-grünem Hintergrund*/
@@ -70,7 +69,7 @@ th {
 
 
 h4 {
-	margin-left: 8%;
+	margin-left: 10%;
 	margin-bottom: 10px;
 }
 
