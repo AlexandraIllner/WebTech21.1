@@ -21,6 +21,12 @@ h2 {
     font-weight: bolder;
 }
 
+h4 {
+	font-variant: small-caps;
+	font-size: larger;
+	font-weight: bolder;
+}
+
 /*<nav>-Feld hat einen Abstand nach oben und nach unten von jeweils 50px*/
 nav {
     margin-top: 50px;
@@ -44,18 +50,13 @@ nav a:hover {
     color:#FF5F00;
 }
 
-/*nav a:visited {
-	background-color:#AFAFAF;
-    color:#0082D1;*/
-}
-
-table {
-    border-collapse:collapse; /*Rahmen aussen*/
-    box-shadow: 5px 5px 5px 5px darkgray; /*Schatten: h-offset(Abstand) v-offset blur spread(Radius)*/
-    width: 80%; /*Breite von 80% des <section>-Elements*/
+table {    
+    box-shadow: 5px 5px 5px 5px darkgray; /*nur um ganze Tabelle, Schatten: h-offset(Abstand) v-offset blur spread(Radius)*/    
 }
 
 table, th, td {
+	width: 80%; /*Breite von 80% des <section>-Elements*/
+	border-collapse:collapse; /*Rahmen aussen*/
     border:1px solid black; /*Gitterlinien innen: Dicke Form Farbe */
     padding:5px; /*Abstand zu Gitterlinien*/
     margin-left: 10%; /* zentriert Tabelle*/
