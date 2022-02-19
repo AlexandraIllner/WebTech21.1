@@ -1,0 +1,51 @@
+* {
+    --htw-gruen: #76B900;
+    --htw-grau:#AFAFAF;
+    --htw-orange:#FF5F00;
+    --htw-blau:#0082D1;
+    --htw-font:Verdana, Geneva, sans-serif;
+}
+
+body {
+    font-family:var(--htw-font);
+}
+
+h1 {
+	text-align: center;
+}
+
+
+.navigation {
+	background-color: lightgrey;
+
+}
+
+li a {
+	color: var(--htw-orange);
+	font-size: 20px;
+	font-weight: bold;
+}
+
+li a:hover {
+	color:  var(--htw-blau);
+	text-decoration: none;
+}
+
+.table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+  background-color: var(--htw-gruen);
+}
+
+#links, #rechts {
+	background-color: lightgrey;
+}
+
+@media screen and (max-width: 992px) {
+	#links, #rechts {
+	background-color: var(--htw-orange);
+	}	
+}
+
+footer {
+	text-align: center;
+	background-color: var(--htw-grau);
+}

@@ -5,48 +5,66 @@
     <title>WebTech_TN_all</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-<!--     <link rel="stylesheet" href="../css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="./uebung4.css">
 </head>
-<body> 
-    <div class="jumbotron text-center">
-                   
-        
-            <div class="row">    
-                <div class="col-sm-1">
-                    <img class="img-responsive" src="../images/fiw.jpg" style="width:80%; height=80%;" alt="FIW-Logo"/>
-                </div>
-                <div class="col-sm-11">
-                    <h1>Teilnehmerinnen WebTech</h1>
-                </div>
-            </div>         
-    </div>   
+<body>
+    <header> 
+        <div class="jumbotron text-center">
+                       
+            
+                <div class="row">
+                   <!--  <div class="col-sm-1"></div> -->   
+                    <div class="col-sm-1">
+                        <img class="img-responsive" src="../images/fiw.jpg" style="padding:  20%;" alt="FIW-Logo"/>
+                    </div>
+                    <div class="col-sm-11">
+                        <h1>Teilnehmerinnen WebTech</h1>
+                    </div>
+                </div>         
+        </div>
+    </header>
+
+    <div class="navigation">
+        <nav class="navbar navbar-light bg-light">
+            <div class="container-fluid">
+                <ul class="navbar-nav list-unstyled"> <!-- um bullet points zu entfernen -->
+                    <li class="nav-item">
+                      <a class="col-sm-1 nav-link active" aria-current="page" href="#">ALLE</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="col-sm-1 nav-link" href="#A">A-G</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="col-sm-1 nav-link" href="#H">H-L</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="col-sm-1 nav-link" href="#M">M-R</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="col-sm-1 nav-link" href="#S">S-Z</a>
+                    </li>
+                </ul>
+            </div>     
+        </nav>  
+    </div>
+
 
     <main class="container-fluid">
-        <div style="background-color: lightgrey;">
-            <nav>
-                <ul>
-                    <li> <a href="#">ALLE</a> <!--  geht auch nur mit #...? --> </li>
-                    <li><a class="nav-link" href="#A">A-G</a></li>
-                    <li><a class="nav-link" href="#H">H-L</a></li>
-                    <li><a class="nav-link" href="#M">M-R</a></li>
-                    <li><a class="nav-link" href="#S">S-Z</a></li>
-                    <li><a href="#">#</a></li>  
-            </ul>  
-            </nav>
+    <div class="row">
+        <div id="links" class="col-12 col-lg-2">
+            <h2>links</h2>
         </div>
-
-        <section>
-            <h4>Alle Teilnehmer_innen</h4>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Vorname</th>
-                        <th>Nachname</th>
-                        <th>E-Mail-Adresse</th>
-                        <th>IP-Adresse</th>
-                    </tr>
-                </thead>
-                <tbody>
+            <div id="mitte" class="col-12 col-lg-8 ">
+                <table class="table table-striped table-responsive-md table-hover">                                                        
+                    <thead>
+                        <tr>
+                            <th>Vorname</th>
+                            <th>Nachname</th>
+                            <th>E-Mail-Adresse</th>
+                            <th>IP-Adresse</th>
+                        </tr>
+                    </thead>
+                    <tbody>
                         <tr id="A">
                             <td>Adam</td>
                             <td>Anderson</td>
@@ -346,15 +364,19 @@
                             <td>Williams</td>
                             <td>cwilliamsl@360.cn</td>
                             <td>154.87.204.51</td>
-                        </tr>
-                </tbody>
-            </table>      
-        </section>
-
+                        </tr>           
+                        </tbody>
+                </table>      
+            </div>
+        <div id="rechts" class="col-12 col-lg-2">
+            <h2>rechts</h2>
+        </div>
+    </div>    
+    </main>    
         <footer>
             <p>Alexandra Illner - WebTech-Aufgabe 2</p>
         </footer>
-    </main>
+
 </body>
 </html>
 
