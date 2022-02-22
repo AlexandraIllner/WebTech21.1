@@ -36,10 +36,10 @@ ul li.nav-item a.nav-link {
 }
 
 
-ul li.nav-item a.nav-link:hover {
+/*ul li.nav-item a.nav-link:hover {
 	color:  var(--htw-blau);
 	text-decoration: none;
-}
+}*/
 
 .table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
   background-color: var(--htw-gruen);

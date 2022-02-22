@@ -5,7 +5,7 @@
     <title>WebTech_TN_all</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="../css/bootstrap.min.css">
-    <link rel="stylesheet" href="./uebung4.css">
+    <link rel="stylesheet" href="./uebung5.css">
 </head>
 <body>
     <header> 
@@ -416,24 +416,156 @@
                             <td>154.87.204.51</td>
                             <td></td>
                         </tr>
-                        <tr>
-                            <td><input id="first" type="text" class="form-control" placeholder="Vorname" onchange="doSomething()"/></td>
-                            <td><input id="last" type="text" class="form-control" placeholder="Nachname" onchange="doSomething()"/></td>
-                            <td><input id="email" type="text" class="form-control" placeholder="E-Mail-Adresse" onchange="doSomething()"/></td>
-                            <td><input id="ip" type="text" class="form-control" placeholder="IP-Adresse" onchange="doSomething()"/></td>
-                            <td><button id="add" type="button" class="btn btn-secondary" onclick="createHeadline()">Add</button></td>
-                        </tr>           
+                        <tr id="input_forms">
+                            <td>
+                                <input id="first" type="text" class="form-control" placeholder="Vorname" />
+                            </td>
+                            <td>
+                                <input id="last" type="text" class="form-control" placeholder="Nachname" />
+                            </td>
+                            <td>
+                                <input id="email" type="text" class="form-control" placeholder="E-Mail-Adresse" />
+                            </td>
+                            <td>
+                                <input id="ip" type="text" class="form-control" placeholder="IP-Adresse" />
+                            </td>
+                        <td>
+                            <button type="button" class="btn btn-dark" onclick="checkAndAdd()">
+                                Add
+                            </button>
+                        </td>
+                        </tr>
                     </tbody>
-                </table>      
+                </table>
+     
             </div>
-        <div id="rechts" class="col-12 col-lg-2">
+                <div id="rechts" class="col-12 col-lg-2">
             <h2>rechts</h2>
         </div>
     </div>    
     </main>    
         <footer>
-            <p>Alexandra Illner - WebTech-Aufgabe 4</p>
+            <p>Alexandra Illner - WebTech-Aufgabe 5</p>
         </footer>
+<script>
+        function checkAndAdd() {
+            console.log('Button geklickt!');
+            let entries = document.getElementsByTagName('input');   // Array aus Eingaben in Input-Elemente (daher Tag)
+
+            let validEntry = true; 
+            // kontrollieren, ob etwas eingegeben wurde:
+            for (let i = 0; i < entries.length; i++) {
+                
+                if (entries[i].value === "") // wenn leerer String
+                {
+                    validEntry = false;
+                    entries[i].classList.add('is-invalid');  // rote Umrandung
+                } 
+                else 
+                {
+                    entries[i].classList.add('is-valid'); // grünes Häkchen
+                    console.log('validEntry');
+                }
+            }
+
+            // wenn alle Einträge valide
+            if (validEntry) {
+                let newRow = document.createElement('tr'); // neue Zeile erzeugen
+                console.log('zeile erzeugt');
+                let first = document.createElement('td');   // neue Felder in Zeile erzeugen
+                console.log('first erzeugt');
+                let last = document.createElement('td');
+                console.log('last erzeugt');
+                let email = document.createElement('td');
+                console.log('mail erzeugt');
+                let ip = document.createElement('td');
+                console.log('ip erzeugt');
+                let wildcard = document.createElement('td');
+                console.log('wildcard');
+                first.innerHTML = entries[0].value; // Felder mit Eingabe aus entsprechendem input-form füllen
+                console.log(entries[0].value);
+                last.innerHTML = entries[1].value;
+                console.log(entries[1].value);
+                email.innerHTML = entries[2].value;
+                console.log(entries[2].value);
+                ip.innerHTML = entries[3].value;
+                console.log(entries[3].value);
+                // wildcard.innerHTML = "";
+                // console.log('wildcard');
+
+                // newRow.appendChild(first);  // der Reihe nach an tr-Element newRow anhängen
+                // console.log('append first');
+                // newRow.appendChild(last);
+                // newRow.appendChild(email);
+                // newRow.appendChild(ip);
+                // newRow.appendChild(wildcard);
+
+                newRow.appendChild(first);  // der Reihe nach an tr-Element newRow anhängen
+                console.log('append first');
+                newRow.appendChild(last);
+                newRow.appendChild(email);
+                newRow.appendChild(ip);
+                // newRow.appendChild(wildcard);
+
+                let tbody = document.getElementById('tn'); // Var für Tabellenkörper und Eingabezeile
+                console.log('tbody');
+                let inputForms = document.getElementById('input_forms');
+
+                tbody.insertBefore(newRow, inputForms);     // vor Eingabezeile einfügen
+
+
+            }
+        }
+    </script>
+
+<!--     <script>
+        function checkAndAdd() 
+        {
+            
+            let entries = document.getElementsByTagName('input');   // Array aus Eingaben in alle Input-Elemente (daher Tag)
+
+            let validEntry = true; 
+            // kontrollieren, ob etwas eingegeben wurde (Array durchgehen):
+            for (let i = 0; i < entries.length; i++) {
+                
+                if (entries[i].value === "") // wenn leerer String
+                {
+                    validEntry = false;
+                    entries[i].classList.add('is-invalid');  // rote Umrandung
+                } 
+                else 
+                {
+                    entries[i].classList.add('is-valid'); // grünes Häkchen
+                }
+            }
+
+            // wenn alle Einträge valide
+            if (validEntry) {
+                let newRow = document.createElement('tr'); // neue Zeile erzeugen
+                let first = document.createElement('td');   // neue Felder in Zeile erzeugen
+                let last = document.createElement('td');
+                let email = document.createElement('td');
+                let ip = document.createElement('td');
+                let wildcard = document.createElement('td');
+                first.innerHTML = entries[0].value; // Felder mit Eingabe aus entsprechendem input-form füllen
+                last.innerHTML = entries[1].value;
+                email.innerHTML = entries[2].value;
+                ip.innerHTML = entries[3].value;
+                wildcard.innerHTML = "";
+
+                newRow.appendChild(first);  // der Reihe nach an tr-Element newRow anhängen
+                newRow.appendChild(last);
+                newRow.appendChild(email);
+                newRow.appendChild(ip);
+                newRow.appendChild(wildcard);
+
+                let tbody = document.getElementById('table_body'); // Var für Tabellenkörper und Eingabezeile
+                let inputForms = document.getElementById('input_forms');
+
+                tbody.insertBefore(newRow, inputForms);     // vor Eingabezeile einfügen
+            }
+        }
+    </script> -->
 
 </body>
 </html>
