@@ -1,0 +1,13 @@
+header {
+    background-color:#AFAFAF;
+    color: #FF5F00;
+    text-align:center;
+    padding: 20px;
+    width: auto;
+}
+
+h1 {
+    font-variant:small-caps; /*Kapitaelchen*/
+    font-weight: bolder;
+    font-size: xx-large;
+}

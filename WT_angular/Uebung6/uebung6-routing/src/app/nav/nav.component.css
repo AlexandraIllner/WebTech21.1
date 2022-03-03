@@ -1,0 +1,25 @@
+nav {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: 2%;
+    }
+
+/*a-Elemente aka Links*/
+nav a {
+    text-decoration:none; /* _nicht_ unterstrichen*/
+    background-color:#0082D1; /*erzeugt button-ähnliche Box*/
+    color:white;
+    font-weight: bold;
+    padding:7px; /*bestimmt Groesse der "Buttons"*/
+    margin-left: 10px;
+    
+    /*mit grauem Rand, abgerundete Ecken erzeugen mit border-radius*/
+    border: 1px solid #AFAFAF;
+    border-radius: 7px; /*je groesser der Wert, desto runder die Ecken*/
+    box-shadow: 6px 6px 5px grey;
+}
+
+nav a:hover {
+    background-color:#AFAFAF;
+    color:#FF5F00;
+}

@@ -1,0 +1,64 @@
+table {  
+    table-layout: auto;
+    width: 95%; /*Breite von 90% des <section>-Elements*/
+    box-shadow: 5px 5px 5px 3px darkgray; /*nur um ganze Tabelle, Schatten: h-offset(Abstand) v-offset blur spread(Radius)*/    
+}
+
+table, th, td {
+	
+	border-collapse:collapse; /*Rahmen aussen*/
+    border: 0.5px solid black; /*Gitterlinien innen: Dicke Form Farbe */
+    padding: 5px; /*Abstand zu Gitterlinien*/
+    margin-left: 2.5%; /* zentriert Tabelle*/
+}
+
+tr:nth-child(even) {
+    background-color: lightgrey;
+}
+
+/*Spaltenüberschriften in weiß, mit HTW-grünem Hintergrund*/
+th {
+    background-color:#76B900;
+    color:white;
+}
+
+#first {
+    width: 30%;
+}
+
+#last {
+    width: 30%;
+}
+
+#email {
+    width: 40%;
+}
+
+button {
+    border: 3px solid #0082D1;
+    border-radius: 5px;    
+    width: 96%;
+    padding: 0.7%;
+    margin: 2%;
+    background-color: #76B900;
+    color: white;
+    font-size: x-large;
+    font-weight: bolder;
+    box-shadow: 5px 5px 5px 3px darkgray;
+}
+
+button:hover {
+    background-color: #0082D1;
+    color: #FF5F00;
+    text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+}
+
+.placeholder {          
+    padding: 10%;    
+    margin: 2%;
+    background-color: #76B900;
+    color: white;
+    font-size: larger;
+    text-align: center;
+    box-shadow: 5px 5px 5px 3px darkgray;
+}
