@@ -1,0 +1,225 @@
+ 
+
+https://aka.ms/powershell
+Type 'help' to get help.
+
+
+PS C:\xampp\htdocs\dashboard\WebTech21.1\WT_angular> mkdir test_app
+
+    Directory:
+C:\xampp\htdocs\dashboard\WebTech21.1\WT_angular
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d----          07.03.2022    12:15                test_app
+
+PS C:\xampp\htdocs\dashboard\WebTech21.1\WT_angular> mkdir backend
+New-Item: An item with the specified name C:\xampp\htdocs\dashboard\WebTech21.1\WT_angular\backend already exists.
+PS C:\xampp\htdocs\dashboard\WebTech21.1\WT_angular> cd .\test_app\
+PS C:\xampp\htdocs\dashboard\WebTech21.1\WT_angular\test_app> mkdir test_backend
+
+    Directory:
+C:\xampp\htdocs\dashboard\WebTech21.1\WT_angular\test_app
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d----          07.03.2022    12:16                test_back
+                                                  end
+
+PS    xampp\htdocs\dashboard\WebTech21.1\WT_angular\test_app>
+PS C:\xampp\htdocs\dashboard\WebTech21.1\WT_angular\test_app> 
+PS C:\xampp\htdocs\dashboard\WebTech21.1\WT_angular\test_app> cd .\test_backend\
+PS C:\xampp\htdocs\dashboard\WebTech21.1\WT_angular\test_app\test_backend> npm init
+This utility will walk you through creating a package.json file.
+It only covers the most common items, and tries to guess sensible defaults.
+
+See `npm help init` for definitive documentation on these fields
+and exactly what they do.
+
+Use `npm install <pkg>` afterwards to install a package and
+save it as a dependency in the package.json file.
+
+Press ^C at any time to quit.
+package name: (test_backend)
+version: (1.0.0)
+description: backend aus skript mit eigenen daten
+entry point: (index.js)
+test command:
+git repository:
+keywords:
+author: A. Illner
+license: (ISC)
+About to write to C:\xampp\htdocs\dashboard\WebTech21.1\WT_angular\test_app\test_backend\package.json:
+
+{
+  "name": "test_backend",
+  "version": "1.0.0",
+  "description": "backend aus skript mit eigenen daten",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "A. Illner",
+  "license": "ISC"
+}
+
+
+Is this OK? (yes)
+PS C:\xampp\htdocs\dashboard\WebTech21.1\WT_angular\test_app\test_backend> 
+PS C:\xampp\htdocs\dashboard\WebTech21.1\WT_angular\test_app\test_backend> npm install express
+
+added 50 packages, and audited 51 packages in 2s
+
+2 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+PS C:\xampp\htdocs\dashboard\WebTech21.1\WT_angular\test_app\test_backend> 
+
+(1) 
+server.js-Datei erzeugen, mit Code aus Skript 
+Erläuterung zum Starten des Webservers in server.js:
+Es wird ein express-Objekt erzeugt (app). Dieses ruft dann die listen()-Fkt. von express auf.
+Syntax der listen()-Fkt.:
+app.listen([port[, host[, backlog]]][, callback])
+
+In server.js sieht das so aus:
+
+PORT ist const=3000, 2. Parameter ist (error) -> anonyme Fkt. als callback in Arrow-Notation
+app.listen(PORT, (error) => {
+    if (error) {
+        console.log(error);
+    } else {
+        console.log(`Server started and listening on port ${PORT} ... `);
+    }
+});
+
+wobei die Fkt. äquivalent ist zu 
+
+function(error) {
+    if (error) {
+        console.log(error);
+    } else {
+        console.log(`Server started and listening on port ${PORT} ... `);
+    }
+}
+
+Dem console.log wird ein template literal übergeben: muss in `...` stehen; hier können var/const verwendet werden in dieser Syntax:
+${...}
+
+(2) 
+routes.js-Datei erzeugen mit Code aus Skript
+Hier wird express.Router als middleware eingesetzt, um 
+*Routen zu verwalten
+*request-Objekte an die entsprechenden Routen weiterzuleiten und
+*response-Objekte zu empfangen
+
+(3)
+nodemon installieren, um node server.js nicht vor jeder Änderung beenden und danach neu starten zu müssen
+Installation als development-dependency, da sonst nicht sinnvoll
+npm install --save-dev nodemon
+In Package.json gibt es jetzt diese devDependency (übrigens kann man dort auch die Versionsnummern nachgucken)
+Auch in package.json wird jetzt ein Skript mit frei wählbarem Namen hinzugefügt, das nodemon server.js ausführen lässt
+aufgerufen wird das dann im Terminal mit npm run <fktname>
+
+(4)
+mongoose installieren als Schnittstelle zwischen node.js und MongoDB
+npm install mongoose --save
+Danach Eintrag des Pakets und der dependency in Package.json
+
+[MongoDB kann lokal installiert oder über Cloud verwendet werden.]
+Zum Erstellen der Datenbank verwenden wir mongosh, das installiert werden muss (nicht über angular) und dann mit z.B. GitBash
+verwendet wird.
+IN DIESEM BEISPIEL: dev
+MongoDB läuft default auf Port 27017, kann man ändern.
+[Automatisches Befüllen ggf. s. https://docs.mongodb.com/mongodb-vscode/playground-databases/]
+
+Verbindung von node.js zu MongoDB in server.js
+
+(5)
+Dotenv für Speicherung (geheimer) Zugangsdaten !!!muss ins .gitignore!!!
+npm i dotenv --save
+.env-Datei erstellen, in server.js mittels 
+require('dotenv').config();
+auslesen, um dann von dort mittels 
+process.env.DB_CONNECTION
+auf den Wert von DB_CONNECTION zuzugreifen.
+
+// (2) vor Einbinden von .env: GET-Anfrage, res=response-Objekt wird durch Anfrage erzeugt und sendet das JS-Objekt mit dem Inhalt Schlüssel message zurück
+/* router.get('/', async(req, res) => {
+
+    res.send({ message: "Hello FIW!" });
+}); */
+
+(6)
+Mongoose-Model erstellen (braucht man für create)
+models-Verzeichnis und darin dev.js erstellen
+
+(7)
+CRUD Zugriffe auf DB
+mit express.Router Routen definieren, mit Mongoose-Model Zugriff auf DB
+Alle Anfragen werden in route.js eingetragen:
+***CREATE --> router.post mit 
+{
+        "name": "Goldberg",
+        "vorname": "Adele",
+        "gender": "f",
+        "url": "https://en.wikipedia.org/wiki/Adele_Goldberg_(computer_scientist)"
+}
+in Postman, diese Angaben werden dann aus request.body ausgelesen
+
+***READ --> router.get(...)
+**alle Einträge:
+router.get('/devs', async(req, res) => {    //anonyme Fkt mit async, damit unten await möglich
+    const allDevs = await Dev.find();       //await: darauf warten, dass find() Ergebnis oder Fehler liefert   
+    // console.log("get aufgerufen");
+    // console.log(allDevs); 
+    res.send(allDevs);                      //res(ponse).send(et) Ergebnis von Dev.find()
+});
+
+**nach Parameter
+router.get('/devs/:PARAM', async(req, res) => {
+    try {
+        const dev = await Dev.findOne({ PARAM: req.params.PARAM });
+        console.log(req.params);
+        res.send(dev);
+    } catch {
+        res.status(404);
+        res.send({
+            error: "Member does not exist!"
+        });
+    }
+}) 
+
+***UPDATE --> PATCH mit updateOne()
+im body JSON mit DB-Objekt-Param übergeben
+
+***DELETE 
+
+(8)CORS zum Umgehen der SingleOriginPolicy (noch nicht ausprobiert)
+npm install cors im Vz. backend und 
+in server.js:
+const cors = require('cors');
+// enable cors for all requests
+app.use(cors());
+
+Wenn Sie z.B. nur die get-Anfrage teilen wollen, dann wählen Sie nicht app.use(cors());, sondern
+
+app.get("/", cors(), (req, res) => {
+        res.json({ message: "Hello FIW!" });
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

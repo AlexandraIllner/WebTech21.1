@@ -1,0 +1,71 @@
+Anstelle des client-seitigen Daten-Service wird nun mit dem backend kommuniziert und dazu ein neues frontend erstellt:
+(1) 
+ng new frontend mit routing und css, in Vz wechseln und components generieren
+bootstrap einbinden (klappt an dieser Stelle GAR NICHT mit ngx-bootstrap), also über link in index.html
+ggf. npm install, damit alles wirklich passt
+(2)
+nav, footer, home (+css) aus Skript einfügen
+Routen definieren in app-routing.module.ts, components einbinden in app.component.html
+(3)
+backend-service erstellen, Vz shared wird automatisch erzeugt: 
+ng g service shared/backend
+In diesem Service wird HttpClientModule verwendet, also in app.module.ts importieren
+und in backend.service.ts mit dependency injection einbinden
+Auch in shared wird ein Interface erstellt: ng g interface shared/member
+mit dem Datenmodell der jeweiligen DB, hier MongoDB
+(4)
+HTTP-Funktionen über HttpClient mit Observables (ähnl. zu listener in Java)
+Observables ermöglichen Kommunikation zw. einem subject (...), welches observer beobachtet und Info erhält, sobald sich Zustand ändert.
+Typische Implementierung über Event-Listener.
+Grundidee in TypeScript:
+Fkt ermittelt Wert, wird aber nur ausgeführt, wenn sich 'jemand' bei ihr angemeldet hat 
+(5)
+Service in table.ts aufrufen --> Anbindung front- an backend
+!!! Funktioniert nur, wenn im backend cors installiert und in die server.js eingetragen wurde!
+Außerdem natürlich backend starten mit node server.js (im backend-Vz) und frontend mit ng server
+Ausgabe auif Konsole.
+Ansonsten Schritte in table.comp.js unter (5) bzw. so sieht's im Skript aus:
+
+table.component.js
+import { Component, OnInit } from '@angular/core';
+import { BackendService } from '../shared/backend.service';
+import { Member } from '../shared/member';
+
+@Component({
+  selector: 'app-table',
+  templateUrl: './table.component.html',
+  styleUrls: ['./table.component.css']
+})
+export class TableComponent implements OnInit {
+  members!: Member[];
+
+  constructor(private bs: BackendService) { }
+
+  ngOnInit(): void {
+    this.readAll();
+  }
+
+  readAll(): void {
+      this.bs.getAll().subscribe(
+      (
+        response: Member[]) => {
+                this.members = response;
+                console.log(this.members);
+                return this.members;
+        },
+        error => console.log(error)
+      );
+    }
+}
+
+(6)
+Darstellung Daten im HTML-templateUrl
+npm i bootstrap-icons
+Icons installieren und in table.component.css importieren
+Bootstrap-Klassen für Tabellen hier https://getbootstrap.com/docs/5.0/content/tables/#accented-tables
+
+(7)
+Detail-Component/Formular
+Zum Bearbeiten mittels Formular, Aufruf über /member/:id, wobei :id = _id eines Member
+Senden der Daten aus Formular ruft update-Fkt im backend auf --> PATCH /members/:id
+a) Datensatz eines Member, dessen _id an die Route übergeben wird, aus DB holen in backend.service.tsb) speichern in detail.component.ts

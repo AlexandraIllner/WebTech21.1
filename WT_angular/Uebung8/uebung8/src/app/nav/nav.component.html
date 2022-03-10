@@ -1,0 +1,17 @@
+<nav class="sticky-top navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" routerLink="">Webtech</a> <!-- Routen NICHT mit z.B. href="#"-->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+<!--routerLink mit property binding, dann können auch Var verwendet werden (?), den Link auch als Array, dann können Param zugefügt werden--> 
+                <a class="nav-link" [routerLink]="['']" routerLinkActive="myactive">Home</a>
+                <a class="nav-link" [routerLink]="['login']" routerLinkActive="myactive">Login</a>
+                <a class="nav-link" [routerLink]="['about']" routerLinkActive="myactive">About</a> 
+                <a class="nav-link" [routerLink]="['cities']" routerLinkActive="myactive">Cities</a>
+            </div>
+        </div>
+    </div>
+</nav>
