@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "@angular/router": "^13.2.4"
+  },
+  "devDependencies": {
+    "lite-server": "^2.6.1"
+  }
+}
