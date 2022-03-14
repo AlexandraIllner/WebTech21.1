@@ -2,28 +2,32 @@ Anstelle des client-seitigen Daten-Service wird nun mit dem backend kommuniziert
 (1) 
 ng new frontend mit routing und css, in Vz wechseln und components generieren
 bootstrap einbinden (klappt an dieser Stelle GAR NICHT mit ngx-bootstrap), also über link in index.html
-ggf. npm install, damit alles wirklich passt
+am besten npm install, damit alles wirklich passt
+
 (2)
 nav, footer, home (+css) aus Skript einfügen
 Routen definieren in app-routing.module.ts, components einbinden in app.component.html
+
 (3)
 backend-service erstellen, Vz shared wird automatisch erzeugt: 
-ng g service shared/backend
+ng g service shared/backend im Projekt-Vz
 In diesem Service wird HttpClientModule verwendet, also in app.module.ts importieren
 und in backend.service.ts mit dependency injection einbinden
 Auch in shared wird ein Interface erstellt: ng g interface shared/member
 mit dem Datenmodell der jeweiligen DB, hier MongoDB
+
 (4)
-HTTP-Funktionen über HttpClient mit Observables (ähnl. zu listener in Java)
+HTTP-Funktionen über HttpClient mit Observables (funktionieren wie listener in Java)
 Observables ermöglichen Kommunikation zw. einem subject (...), welches observer beobachtet und Info erhält, sobald sich Zustand ändert.
 Typische Implementierung über Event-Listener.
 Grundidee in TypeScript:
-Fkt ermittelt Wert, wird aber nur ausgeführt, wenn sich 'jemand' bei ihr angemeldet hat 
+Fkt ermittelt Wert, wird aber nur ausgeführt, wenn sich 'jemand' bei ihr angemeldet hat
+
 (5)
 Service in table.ts aufrufen --> Anbindung front- an backend
 !!! Funktioniert nur, wenn im backend cors installiert und in die server.js eingetragen wurde!
 Außerdem natürlich backend starten mit node server.js (im backend-Vz) und frontend mit ng server
-Ausgabe auif Konsole.
+Ausgabe auf Konsole.
 Ansonsten Schritte in table.comp.js unter (5) bzw. so sieht's im Skript aus:
 
 table.component.js
@@ -62,10 +66,18 @@ export class TableComponent implements OnInit {
 Darstellung Daten im HTML-templateUrl
 npm i bootstrap-icons
 Icons installieren und in table.component.css importieren
+Einbinden so, wie auf https://icons.getbootstrap.com/icons/ aber ohne <i>, weil Formatierungselement --> <span> verstößt nicht gegen Trennung von HTML und CSS
 Bootstrap-Klassen für Tabellen hier https://getbootstrap.com/docs/5.0/content/tables/#accented-tables
 
+
 (7)
-Detail-Component/Formular
+Detail-Component
 Zum Bearbeiten mittels Formular, Aufruf über /member/:id, wobei :id = _id eines Member
 Senden der Daten aus Formular ruft update-Fkt im backend auf --> PATCH /members/:id
 a) Datensatz eines Member, dessen _id an die Route übergeben wird, aus DB holen in backend.service.tsb) speichern in detail.component.ts
+b) ...
+
+(8)
+Formulare
+Am besten reactive forms, die werden in TypeScript erstellt (hier in detail.comp.ts)
+WICHTIG ReactiveFormsModule in app.module.ts importieren! 

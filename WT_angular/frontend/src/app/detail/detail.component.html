@@ -1,1 +1,32 @@
-<p>detail works!</p>
+<!--(8) -->
+
+<main class="d-flex min-vh-100">
+    <fieldset class="container  mt-5">
+        <legend *ngIf="member" class="mb-4">Eintrag von {{ member.forename }} {{ member.surname }} aktualisieren
+        </legend>
+        <legend *ngIf="!member" class="mb-4">Eintrag aktualisieren</legend>
+        <!--(8) form aus detail.comp.ts mittels property binding dem HTML-Element form übergeben-->
+        <!--(8) ngSubmit meldet den Aufruf der Fkt update aus .ts beim submit event an-->
+        <form [formGroup]="form" (ngSubmit)="update()">
+            <div class="form-group row">
+                <label class="col-2 col-form-label" for="forename">Vorname</label>
+                <input type="text" class="col-10 form-control" id="forename" placeholder="Vorname" formControlName="forenameControl">
+            </div>
+            <div class="form-group row">
+                <label class="col-2 col-form-label" for="surname">Nachname</label>
+                <input type="text" class="col-10 form-control" id="surname" placeholder="Nachname" formControlName="surnameControl">
+            </div>
+            <div class="form-group row">
+                <label class="col-2 col-form-label" for="email">E-Mail</label>
+                <input type="email" class="col-10 form-control" id="email" placeholder="E-Mail" formControlName="emailControl">
+
+            </div>
+            <div class="form-group row  justify-content-end">
+                <button type="submit" class="col-4 btn btn-secondary">Aktualisieren</button>
+                <div class="col-2"></div>
+                <!--(8) cancel() wird ausgeführt, wenn button geclickt -->
+                <button type="button" class="col-4 btn btn-secondary" (click)="cancel() ">Abbrechen</button>
+            </div>
+        </form>
+    </fieldset>
+</main>
