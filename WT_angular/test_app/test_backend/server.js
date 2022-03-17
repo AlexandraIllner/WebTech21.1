@@ -6,7 +6,7 @@ require('dotenv').config(); //(5)config() liest .env.Datei ein, auf die unten mi
 
 
 const app = express(); //(1)express-objekt erzeugen und in var app speichern
-const PORT = 3000; //(1)port-nummer festlegen (wählbar), backend unter http://localhost:3000 verfügbar
+const PORT = 3001; //(1)port-nummer festlegen (wählbar), backend unter http://localhost:3000 verfügbar
 
 app.use(express.json()); //(2)hier wird festgelegt, dass alle JS-Objekte nach JSON umgewandelt werden
 app.use('/', routes); // (2)Verwendung von routes

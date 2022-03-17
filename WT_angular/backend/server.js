@@ -9,7 +9,7 @@ const app = express();
 const PORT = 3000;
 
 app.use(express.json());
-// enable cors for all requests für Anbindung frontend
+// enable cors for all requests für Anbindung frontend, geht auch (unten dann) für einzelne anfragen: app.get("/", cors(), (req, res) => { res.json({ message: "Hello FIW!" });});
 app.use(cors()); 
 app.use('/', routes);
 

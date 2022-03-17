@@ -1,20 +1,16 @@
 const express = require('express');
-var bodyParser = require('body-parser'); //
 const router = express.Router();
-var jsonParser = bodyParser.json(); //
-
 const Member = require('./models/members');
-
 
 // get all members
 router.get('/members', async(req, res) => {
     const allMembers = await Member.find();
-    //console.log(allMembers);
+    console.log(allMembers);
     res.send(allMembers);
 });
 
 // post one member
-router.post('/members', jsonParser, async(req, res) => {
+router.post('/members', async(req, res) => {
     const newMember = new Member({
         forename: req.body.forename,
         surname: req.body.surname,
@@ -24,7 +20,7 @@ router.post('/members', jsonParser, async(req, res) => {
     res.send(newMember);
 });
 
-// read one member via id
+// get one member via id
 router.get('/members/:id', async(req, res) => {
     try {
         const member = await Member.findOne({ _id: req.params.id });
@@ -38,7 +34,7 @@ router.get('/members/:id', async(req, res) => {
     }
 });
 
-// update one member
+// update one member via id
 router.patch('/members/:id', async(req, res) => {
     try {
         const member = await Member.findOne({ _id: req.params.id })
@@ -73,9 +69,5 @@ router.delete('/members/:id', async(req, res) => {
         res.send({ error: "Member does not exist!" })
     }
 });
-
-
-
-
 
 module.exports = router;
