@@ -1,0 +1,39 @@
+<div class="container mt-3">
+    <h3 class="m-3">Alle Einträge</h3>
+    <div class="table-responsive">
+        <table class="m-3 table table-striped table-hover">
+            <!-- WOZU? bariierefreiheit...? <caption>Alle <code>programmingLanguages</code></caption> -->
+            <thead>
+                <tr>
+                    <th scope="col ">Nr</th>
+                    <th scope="col ">Name</th>
+                    <th scope="col ">Jahr</th>
+                    <th scope="col ">Lizenz</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- tabelle befüllen mit array aus .ts 1b -->
+                <tr *ngFor="let language of languages; let i=index; ">
+                    <td>{{ i+1 }}</td>
+                    <td>{{ language.name }}</td>
+                    <td>{{ language.jahr }}</td>
+                    <td>{{ language.lizenz}}</td>
+                    <td>
+                        <!-- <a [href]="'mailto:' + language.lizenz"><span class="bi bi-envelope px-5"></span></a> -->
+
+                        <!--(2a) aufruf der detail-comp mit auslesen und übergabe id dieses eintrags-->
+                        <a [routerLink]="['/language', language._id]"> <span class=" bi bi-pencil-square px-5 "></span></a>
+                        <!-- hier weirder fehler wegen String und nicht string (why?), gefixt im model -->
+                        <!-- TODO: nachfrage-message-->
+                        <span (click)="delete(language._id)" class=" bi bi-trash px-5 "></span>
+                    </td>
+                </tr>
+            </tbody>
+
+        </table>
+    </div>
+</div>
+<div *ngIf="deleted" class=" container mt-3 ">
+    <h3>Datensatz wurde gelöscht!</h3>
+    <button type="button" class="btn btn-secondary" (click)="reload(false)">Zurück zur Tabelle</button>
+</div>

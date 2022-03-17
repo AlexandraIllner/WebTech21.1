@@ -1,0 +1,32 @@
+<!--(2c)-->
+<main class="d-flex min-vh-100">
+    <fieldset class="container  mt-5">
+<!--         <legend *ngIf="language" class="mb-4">Eintrag von {{ language.name }} aktualisieren
+        </legend> -->
+        <legend *ngIf="!language" class="mb-4">Programmiersprache hinzufügen</legend>
+        <!--(2c) anmeldung des formulars an submit-event (click auf button unten) mit ngsubmit, update() wird ausgeführt-->
+        <!-- form aus .ts mittels property binding an html-form übergeben-->
+        <form [formGroup]="form" (ngSubmit)="create()">
+            <div class="form-group row">
+                <!-- <label class="col-2 col-form-label" for="name"></label> -->
+                <input type="text" class="col-10 form-control" id="name" placeholder="Name" formControlName="nameControl">
+            </div>
+            
+            <div class="form-group row">
+                <!-- <label class="col-2 col-form-label" for="jahr">Jahr</label> -->
+                <input type="text" class="col-10 form-control" id="jahr" placeholder="Jahr" formControlName="jahrControl">
+            </div>
+            <div class="form-group row">
+                <!-- <label class="col-2 col-form-label" for="lizenz">Lizenz</label> -->
+                <input type="lizenz" class="col-10 form-control" id="lizenz" placeholder="Lizenz" formControlName="lizenzControl">
+
+            </div>
+            <div class="form-group row  justify-content-end">
+                <button type="submit" class="col-4 btn btn-secondary">Hinzufügen</button>
+                <div class="col-2"></div>
+                <!--(2c) anmeldung an click-event -> cancel()-->
+                <button type="button" class="col-4 btn btn-secondary" (click)="cancel() ">Abbrechen</button>
+            </div>
+        </form>
+    </fieldset>
+</main>
