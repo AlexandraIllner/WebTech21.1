@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+/* const mongoose = require('mongoose');
 
 const schema = new mongoose.Schema({
     forename: String,
@@ -6,4 +6,4 @@ const schema = new mongoose.Schema({
     email: String
 });
 
-module.exports = mongoose.model('Member', schema);
+module.exports = mongoose.model('Member', schema); */

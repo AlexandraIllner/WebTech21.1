@@ -1,16 +1,16 @@
-const express = require('express');
+/* const express = require('express');
 const router = express.Router();
-const Member = require('./models/members');
+const Member = require('../models/members.model');
 
 // get all members
-router.get('/members', async(req, res) => {
+router.get('/', async(req, res) => {
     const allMembers = await Member.find();
     console.log(allMembers);
     res.send(allMembers);
 });
 
 // post one member
-router.post('/members', async(req, res) => {
+router.post('/', async(req, res) => {
     const newMember = new Member({
         forename: req.body.forename,
         surname: req.body.surname,
@@ -21,7 +21,7 @@ router.post('/members', async(req, res) => {
 });
 
 // get one member via id
-router.get('/members/:id', async(req, res) => {
+router.get('/:id', async(req, res) => {
     try {
         const member = await Member.findOne({ _id: req.params.id });
         console.log(req.params);
@@ -35,7 +35,7 @@ router.get('/members/:id', async(req, res) => {
 });
 
 // update one member via id
-router.patch('/members/:id', async(req, res) => {
+router.patch('/:id', async(req, res) => {
     try {
         const member = await Member.findOne({ _id: req.params.id })
 
@@ -60,7 +60,7 @@ router.patch('/members/:id', async(req, res) => {
 });
 
 // delete one member via id
-router.delete('/members/:id', async(req, res) => {
+router.delete('/:id', async(req, res) => {
     try {
         await Member.deleteOne({ _id: req.params.id })
         res.status(204).send()
@@ -70,4 +70,4 @@ router.delete('/members/:id', async(req, res) => {
     }
 });
 
-module.exports = router;
+module.exports = router; */
