@@ -1,0 +1,43 @@
+.grid-container {
+  margin: 20px;
+  background-color: aqua;
+}
+
+/* .grid-container {
+  background-color: lime;
+} */
+
+.dashboard-card {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  bottom: 15px;
+  background-color: darkorange;
+  border-radius: 8%;
+}
+
+.more-button {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+}
+
+.dashboard-card-content {
+  text-align: center;
+}
+
+/* div {
+  background-color: greenyellow;
+} */
+
+.mat-h1 {
+  background-color: rebeccapurple;
+  color:gold
+}
+
+.dashboard-card-content {
+  background-color: gainsboro;
+}
+
+

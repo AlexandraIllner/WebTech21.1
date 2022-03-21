@@ -1,0 +1,72 @@
+user- und rechteverwaltung mit routing guards, 
+neues 'frontend' mit material statt bootstrap als css-framework,
+aufbauend auf backend mit mongodb (members)
+
+0
+guards erlauben, ob component aufgerufen werden kann oder nicht (z.b. für admin-funktionen)
+
+    projekt erstellen in cli:
+    ng new users --routing
+    cd users
+    ng add @angular/material (frage nach prebuilt theme beantworten wie du willst, auch sonst einfach alles mit yes beantworten)
+
+material nutzt schematics, vordefinierte komponenten für z.b. navigation:
+(diese schematics werden im verlauf an unsere bedürfnisse angepasst)
+
+    ng generate @angular/material:navigation nav (letztes = gewählter name)
+
+    ng generate @angular/material:address-form register 
+
+    ng generate @angular/material:address-form login
+
+    ng generate @angular/material:dashboard home
+
+sicherheitshalber nochmal 
+    npm install 
+deklaration und import erledigt cli automatisch.
+
+1
+routing siehe app-routing-module.ts
+
+2
+inhalt von app.comp.html löschen und nav-direktive einbinden, siehe dort
+
+3
+in nav.comp.html unter <!--add content here--> 
+    <router-outlet></router-outlet>
+der rest sind material-klassen und hier nicht interessant
+
+links anpassen, nicht über href sondern mit property binding, siehe dort
+
+überschrift anpassen in <span>-element der toolbar
+
+4
+registrierung
+default code überschreiben mit s. .html und .ts (bzw. nach eigenen bedürfnissen)
+änderungen in .ts in html übertragen (z.b. address zu register)
+
+5
+login
+ähnlich wie registrierung, siehe login-dateien
+
+6 anbindung ans backend
+nachdem der register-button gedrückt wurde, soll die neue userin in die datenbank geschrieben werden,
+beim login werden die daten ans backend gesendet und entsprechend gehandelt (einloggen oder fehler).
+es wird das mongodb-backend erweitert:
+model und route (am besten in einem routes-ordner) für users erstellen, ggf. etwas übersichtlicher benennen (membersR, membersM).
+
+db.js erstellen
+
+
+
+
+
+
+
+
+
+
+
+
+
+

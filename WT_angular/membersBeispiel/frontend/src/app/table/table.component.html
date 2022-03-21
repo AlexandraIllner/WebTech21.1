@@ -1,0 +1,41 @@
+<div class="container mt-3">
+    <h3 class="m-3">Alle Einträge</h3>
+    
+    <div class="table-responsive">
+        <table class="m-3 table table-striped table-hover">
+            <caption>Alle <code>members</code></caption>
+            <thead>
+                <tr>
+                    <th scope="col ">Nr</th>
+                    <th scope="col ">Vorname</th>
+                    <th scope="col ">Nachname</th>
+                    <th scope="col ">E-Mail</th>
+                </tr>
+            </thead>
+            <tbody>
+<!--(6) members wird in table.comp.ts deklariert & mit Daten befüllt und hier ausgelesen und in Tabelle eingefügt, mit fortlfd. Nr in 1. Spalte -->
+                <tr *ngFor="let member of members; let i=index; ">
+                    <td>{{ i+1 }}</td>
+                    <td>{{ member.forename }}</td>
+                    <td>{{ member.surname }}</td>
+                    <td>
+                        <!--(6) Link um Mail an Member xy zu senden (MAILTO-Protokoll) mit property binding & envelope-icon-->
+                        <a [href]="'mailto:' + member.email"><span class="bi bi-envelope px-5"></span></a>
+                        <!--(6) für update: RouterLink mit Aufruf der Route zur _id des Member mit stift-icon-->
+                        <a [routerLink]="[ '/member', member._id] "> <span class=" bi bi-pencil-square px-5 "></span></a>
+                        <!--(6) delete on click (event binding) auf mülleimer-icon-->
+                        <span (click)="delete(member._id)" class=" bi bi-trash px-5 "></span>
+                        
+                    </td>                    
+                </tr>
+            </tbody>
+
+        </table>
+        
+    </div>
+</div>
+<div *ngIf="deleted" class=" container mt-3 ">
+    <h3>Datensatz wurde gelöscht!</h3>
+    <button type="button" class="btn btn-secondary" (click)="reload(false)">Zurück zur Tabelle</button>
+</div>
+

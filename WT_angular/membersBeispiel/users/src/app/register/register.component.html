@@ -1,0 +1,82 @@
+<!--(4) default shipping info des address-form ersetzen durch-->
+<!-- reaktives form, definiert in .ts -->
+<form [formGroup]="registerForm" novalidate (ngSubmit)="onSubmit()">
+  <mat-card class="shipping-card">
+      <mat-card-header>
+          <mat-card-title>Registrierung</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+          <p>
+              <mat-form-field class="full-width" appearance="standard">
+                  <mat-label>Vorname</mat-label>
+                  <input matInput placeholder="Vorname" formControlName="firstName">
+                  <mat-error *ngIf="registerForm.controls['firstName'].hasError('required')">
+                      Vorname <strong>erforderlich</strong>
+                  </mat-error>
+              </mat-form-field>
+          </p>
+          <p>
+              <mat-form-field class="full-width" appearance="standard">
+                  <mat-label>Nachname</mat-label>
+                  <input matInput placeholder="Nachname" formControlName="lastName">
+                  <mat-error *ngIf="registerForm.controls['lastName'].hasError('required')">
+                      Nachname <strong>erforderlich</strong>
+                  </mat-error>
+              </mat-form-field>
+          </p>
+          <p>
+
+
+            <mat-form-field class="full-width" appearance="standard">
+                <mat-label>E-Mail</mat-label>
+                <input matInput placeholder="E-Mail" formControlName="email" (change)="checkIfExists($event.target)">
+                <mat-error *ngIf="registerForm.controls['email'].hasError('required')">
+                    E-Mail <strong>erforderlich</strong>
+                </mat-error>
+            </mat-form-field>
+
+
+              
+          </p>
+          <p>
+              <mat-form-field class="full-width" appearance="standard">
+                  <mat-label>Passwort</mat-label>
+                  <input matInput placeholder="Passwort" formControlName="password" [type]="hide ? 'password' : 'text'">
+                  <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+  </button>
+              </mat-form-field>
+          </p>
+          <p>
+              <mat-form-field class="full-width" appearance="standard">
+                  <mat-label>Passwort wiederholen</mat-label>
+                  <input matInput placeholder="Passwort wiederholen" formControlName="passwordrepeat" [type]="hide ? 'password' : 'text'">
+                  <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+  </button>
+              </mat-form-field>
+          </p>
+          <p>
+              <mat-form-field class="full-width" appearance="standard">
+                  <mat-label>Rolle</mat-label>
+                  <mat-select placeholder="Rolle" formControlName="role">
+                      <!--(4) roles-array durchlaufen-->
+                      <mat-option *ngFor="let role of roles" [value]="role.abbreviation">
+                          {{ role.name }}
+                      </mat-option>
+                  </mat-select>
+                  <!--()-->
+                  <mat-hint align="end">Wählen Sie eine Rolle</mat-hint>
+                  <!--(4) behandlung falls validator fehler meldet-->
+                  <mat-error *ngIf="registerForm.controls['role'].hasError('required')">
+                      Rolle <strong>erforderlich</strong> 
+                  </mat-error>
+              </mat-form-field>
+          </p>
+      </mat-card-content>
+      <!---->
+      <mat-card-actions>
+          <button mat-raised-button color="primary" type="submit">Registrieren</button>
+      </mat-card-actions>
+  </mat-card>
+</form>
