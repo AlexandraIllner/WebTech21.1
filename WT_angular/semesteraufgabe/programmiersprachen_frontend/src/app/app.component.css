@@ -1,0 +1,25 @@
+/* :root {
+    --akzentfarbe: #c32e04;
+  }
+  h1 {
+    border: thin solid var(--akzentfarbe);
+  }
+  h1::before {
+    color: var(--akzentfarbe);
+    content: "Wichtig: ";
+  }
+
+Fallback mit festen Werten für custom properties
+h1 {
+  color: var(--akzentfarbe, red);
+} */
+
+:root {
+    
+--violet: #9b5de5;
+--pink: #f15bb5;
+--yellow: #fee440;
+--blue: #00bbf9;
+--mint: #00f5d4;
+
+}

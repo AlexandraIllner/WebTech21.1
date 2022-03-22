@@ -7,10 +7,10 @@
       <div class="row">
         <div class="col">
           <mat-form-field class="full-width">
-            <input matInput placeholder="User-Name" formControlName="firstName">
+            <input matInput placeholder="Username" formControlName="firstName">
             <mat-error *ngIf="registerForm.controls['firstName'].hasError('required')">
               <!-- user-namen auf doppelte kontrollieren! -->
-              <strong>Bitte gib einen User-Namen ein!</strong>
+              <strong>Bitte gib einen Usernamen an!</strong>
             </mat-error>
           </mat-form-field>
         </div>

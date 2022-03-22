@@ -26,6 +26,8 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { LangTableComponent } from './lang-table/lang-table.component';
 import { TableExpandableRowsExample } from './table-expandable-rows-example/table-expandable-rows-example';
+//backend-service
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -57,7 +59,9 @@ import { TableExpandableRowsExample } from './table-expandable-rows-example/tabl
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
-    MatTableModule
+    MatTableModule,
+    //backend-service
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
