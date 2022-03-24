@@ -1,0 +1,57 @@
+
+
+<mat-table class="devtable mat-elevation-z8" [dataSource]="developers">
+
+    <ng-container matColumnDef="name">
+        <mat-header-cell *matHeaderCellDef>Name</mat-header-cell>
+        <mat-cell *matCellDef="let developer">{{developer.name}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="firstname">
+        <mat-header-cell *matHeaderCellDef>Vorname</mat-header-cell>
+        <mat-cell *matCellDef="let developer">{{developer.firstname}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="gender">
+        <mat-header-cell *matHeaderCellDef>Gender</mat-header-cell>
+        <mat-cell *matCellDef="let developer">{{developer.gender}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="url">
+        <mat-header-cell *matHeaderCellDef>Info</mat-header-cell>
+        <mat-cell *matCellDef="let developer">
+           <a href="{{developer.url}}">Link</a>
+        </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+
+    <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+
+    
+    
+<!--     <thead>
+        <tr>
+            <th scope="col ">Vorname</th>
+            <th scope="col ">Name</th>
+            
+            <th scope="col ">gender</th>
+            <th scope="col ">Info</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let dev of developers;">
+            <td>{{ dev.firstname }}</td>
+            <td>{{ dev.name }}</td>
+            
+            <td>{{ dev.gender }}</td>
+            <td>{{ dev.url }}</td>
+           
+        </tr>
+    </tbody> -->
+    </mat-table>
+    
+    
+    
+    
+    

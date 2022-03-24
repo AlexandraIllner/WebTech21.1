@@ -7,10 +7,6 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "nodemon ./server.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/AlexandraIllner/WebTech21.1.git#main"
-  },
   "keywords": [
     "MEAN",
     "programming",

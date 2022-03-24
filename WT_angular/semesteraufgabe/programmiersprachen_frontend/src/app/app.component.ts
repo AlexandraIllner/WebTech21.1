@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+//new
+
+//import { Developer } from './shared/developer';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +9,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'programmiersprachen_frontend';
+  title = 'Programmiersprachen-Museum';
+  //developers!: Developer[];
+
+  
 }

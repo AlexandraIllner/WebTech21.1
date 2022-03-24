@@ -1,41 +1,36 @@
-//backendservice und interface und aus /core auch oninit importieren
+import { Component, OnInit } from '@angular/core';
 import { BackendService } from '../shared/backend.service';
 import { Developer } from '../shared/developer';
-import {Component, OnInit} from '@angular/core';
-import {animate, state, style, transition, trigger} from '@angular/animations';
-//import { MatTableDataSource } from "@angular/material/table";
+
 
 
 @Component({
-  selector: 'table-expandable-rows-example',
-  styleUrls: ['table-expandable-rows-example.css'],
-  templateUrl: 'table-expandable-rows-example.html',
-  animations: [
-    trigger('detailExpand', [
-      state('collapsed', style({height: '0px', minHeight: '0'})),
-      state('expanded', style({height: '*'})),
-      transition('expanded <=> collapsed', animate('225ms cubic-bezier(0.4, 0.0, 0.2, 1)')),
-    ]),
-  ],
+  selector: 'app-table',
+  templateUrl: './table.component.html',
+  styleUrls: ['./table.component.css']
 })
 
-export class TableExpandableRowsExample implements OnInit{
-
+export class TableComponent implements OnInit {
   developers!: Developer[];
-  ELEMENT_DATA = this.developers;
-  dataSource = this.ELEMENT_DATA; 
-  columnsToDisplay = ['name', 'firstname', 'gender', 'url'];
-  expandedElement!: Developer | null;
-  
 
-  constructor(private bs: BackendService) {}
-  
+
+
+ 
+
+
+    constructor(private bs: BackendService) { }
+
   ngOnInit(): void {
     this.readAll();
+    //Array-Test
+    //console.log(this.dataSource);
+
+    // freakyjolly-tutorial: 
+    // this.dataDevelopersList.data = this.developers;
   }
 
   readAll(): void {
-    this.bs.getAll().subscribe(
+      this.bs.getAll().subscribe(
       (
         response: Developer[]) => {
                 this.developers = response;
@@ -44,32 +39,25 @@ export class TableExpandableRowsExample implements OnInit{
         },
         error => console.log(error)
       );
-  }
-
-
+    }
 }
 
-/*   dataSource = ELEMENT_DATA;
-  //hier wird die Reihenfolge bestimmt..?
-  columnsToDisplay = ['position', 'name', 'weight', 'symbol'];
-  expandedElement!: PeriodicElement | null; /  
-}
-/*
-export interface PeriodicElement {
+// Array-Test 
+/* export interface PeriodicElement {
+  name: string;
   position: number;
-  name: string;  
   weight: number;
   symbol: string;
   description: string;
 }
-
 const ELEMENT_DATA: PeriodicElement[] = [
   {
     position: 1,
-    name: 'ich stehe in const ELEMENT_DATA in .ts, es gibt ein Interface ebenda',
+    name: 'Hydrogen',
     weight: 1.0079,
     symbol: 'H',
-    description: `mich sieht man nur in der aufgeklappten Ansicht`,
+    description: `Hydrogen is a chemical element with symbol H and atomic number 1. With a standard
+        atomic weight of 1.008, hydrogen is the lightest element on the periodic table.`,
   },
   {
     position: 2,
@@ -151,4 +139,6 @@ const ELEMENT_DATA: PeriodicElement[] = [
         Neon is a colorless, odorless, inert monatomic gas under standard conditions, with about
         two-thirds the density of air.`,
   },
-];*/
+];
+ */
+

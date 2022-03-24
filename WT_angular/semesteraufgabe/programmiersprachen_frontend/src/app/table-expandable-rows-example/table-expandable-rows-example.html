@@ -1,24 +1,27 @@
-
-<table mat-table [dataSource]="dataSource" multiTemplateDataRows class="mat-elevation-z8">
-  <ng-container matColumnDef="{{column}}" *ngFor="let column of columnsToDisplay">
+<!--dataSource = ELEMENT_DATA -> PeriodicElement[]-->
+<!-- <table mat-table [dataSource]="dataSource" multiTemplateDataRows class="mat-elevation-z8"> -->
+  <table mat-table multiTemplateDataRows class="mat-elevation-z8">
+  <!--columnsToDisplay = Array mit Spaltennamen, column einzelnes Element, ggf. extrapoliert-->
+  <!-- <ng-container matColumnDef="{{column}}" *ngFor="let column of columnsToDisplay"> -->
+    <ng-container *ngFor="let column of columnsToDisplay">
     <th mat-header-cell *matHeaderCellDef> {{column}} </th>
-    <td mat-cell *matCellDef="let element"> {{element[column]}} </td>
+    <td mat-cell *matCellDef="let nameEgal"> {{nameEgal[column]}} </td>
   </ng-container>
 
   <!-- Expanded Content Column - The detail row is made up of this one column that spans across all columns -->
   <ng-container matColumnDef="expandedDetail">
-    <td mat-cell *matCellDef="let element" [attr.colspan]="columnsToDisplay.length">
+    <td mat-cell *matCellDef="let dev" [attr.colspan]="columnsToDisplay.length">
       <div class="example-element-detail"
-           [@detailExpand]="element == expandedElement ? 'expanded' : 'collapsed'">
+           [@detailExpand]="dev == expandedElement ? 'expanded' : 'collapsed'">
         <div class="example-element-diagram">
-          <div class="example-element-position"> {{element.position}} </div>
-          <div class="example-element-symbol"> {{element.symbol}} </div>
-          <div class="example-element-name"> {{element.name}} </div>
-          <div class="example-element-weight"> {{element.weight}} </div>
+          <div class="example-element-position"> {{dev.firstname}} </div>
+          <div class="example-element-symbol"> {{dev.name}} </div>
+          <div class="example-element-name"> {{dev.gender}} </div>
+          <div class="example-element-weight"> {{dev.url}} </div>
         </div>
         <div class="example-element-description">
-          {{element.description}}
-          <span class="example-element-description-attribution"> -- Wikipedia </span>
+          {{dev.description}} ICH STEHE in .html
+          <span class="example-element-description-attribution"> -- Wikipedia (ich bin eine attribution in .html) </span>
         </div>
       </div>
     </td>

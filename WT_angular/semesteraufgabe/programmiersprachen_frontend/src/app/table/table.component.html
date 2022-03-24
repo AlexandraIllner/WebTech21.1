@@ -1,0 +1,25 @@
+<table>
+<thead>
+    <tr>
+        <th scope="col ">Vorname</th>
+        <th scope="col ">Name</th>
+        
+        <th scope="col ">gender</th>
+        <th scope="col ">Info</th>
+    </tr>
+</thead>
+<tbody>
+    <tr *ngFor="let dev of developers;">
+        <td>{{ dev.firstname }}</td>
+        <td>{{ dev.name }}</td>
+        
+        <td>{{ dev.gender }}</td>
+        <td>{{ dev.url }}</td>
+       
+    </tr>
+</tbody>
+</table>
+
+
+
+

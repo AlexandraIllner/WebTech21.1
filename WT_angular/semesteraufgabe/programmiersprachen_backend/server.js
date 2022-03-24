@@ -1,5 +1,7 @@
 const express = require('express');
 const cors = require('cors');
+
+
 const db = require('./db');
 const noRoute = require('./routes/routes');
 const routesDevelopers = require('./routes/developersR');
@@ -13,9 +15,11 @@ const PORT = 3000;
 app.use(express.json());
 // enable cors for all requests TODO: sinnvoll für alle requests??? dann statt dem hier in anfrage app.get("/", cors(), (req, res)...
 app.use(cors());
-app.use('/initdb', initDB);
-//app.use('/developers', developersRoute);
-//app.use('/languages', languagesRoute);
+
+// AUSSCHLIESSLICH HIER WIRD IRGENDWAS AN DIE URL GEHÄNGT!!!! Menno
+//app.use('/initdb', initDB);
+app.use('/developers', routesDevelopers);
+app.use('/languages', routesLanguages);
 app.use('/users', routesUsers);
 app.use('/', noRoute);
 
