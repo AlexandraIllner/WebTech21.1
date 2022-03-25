@@ -1,0 +1,46 @@
+@import url('../../../node_modules/bootstrap-icons/font/bootstrap-icons.css');
+
+#pencil {
+    color: #ff006e;
+}
+
+#all {
+    /* background-color: rgb(51, 40, 51); */
+    /* color: #fb5607; */
+}
+
+.table {    
+
+    /* color: #fb5607; */
+    /* background-color: #333333; */
+}
+
+tr:nth-child(even) {
+    /* color: #ffbe0b; */
+    /* background-color: #474747; */
+}
+
+tr:hover {
+    /* color: #8338ec; */
+}
+
+th {
+    text-align: left;
+    /* color: #ffbe0b; */
+    /* background-color: #474747; */
+}
+
+a {
+    text-decoration: none;
+    font-weight: bold;
+    color: orange;
+}
+
+
+/* .table-striped > tbody > tr:nth-child(2n+1) > td, 
+.table-striped > tbody > tr:nth-child(2n+1) > th {
+    background-color: red;
+ } */
+
+
+

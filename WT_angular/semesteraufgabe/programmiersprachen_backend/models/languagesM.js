@@ -2,10 +2,11 @@ const mongoose = require('mongoose');
 
 const schema = new mongoose.Schema({
 	name: String,
+	token: String,
 	year: String,
-	paradigma: String,
+	paradigm: String,
 	helloworld: String,
-	text: String
+	info: String
 });
 
 module.exports = mongoose.model('Language', schema);

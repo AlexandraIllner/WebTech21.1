@@ -1,0 +1,50 @@
+<div id="all">
+
+    <div class="container mt-10">
+        <h3 class="mb-4">Alle an den aufgeführten Programmiersprachen Entwickelnden </h3>
+        <div class="table-responsive">
+            <!-- <table class="m-3 table table-striped table-hover"> -->
+                <table class="table table-hover">
+                <caption>Alle <code>developers</code></caption>
+                <thead>
+                    <tr>
+                        <th scope="col-2 ">Vorname</th>
+                        <th scope="col-2 ">Name</th>
+                        <th scope="col-1 ">gender</th>
+                        <th scope="col-1 ">Info</th>
+                        <th scope="col-1">Mitarbeit</th>
+<!--                         <th scope="col ">bearbeiten</th>
+                        <th scope="col ">löschen</th> -->
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let developer of developers; let i=index; ">                        
+                        <td>{{ developer.firstname }}</td>
+                        <td>{{ developer.name }}</td>
+                        <td>{{ developer.gender }}</td>
+                        <td>
+                            <a href="{{ developer.url }}">Link</a>                             
+                        </td>  
+                        <td>hier sehr schicke <br>Implementierung einfügen</td>
+                        <td>
+                            <!-- hier muss jetzt irgendwie ein zugriff erfolgen auf die developer mit dem enstpr. token als collabo,
+                            evtl. über ausgabe der token, aber dann muss immer noch von hier aus ein zugriff auf language möglich sein -->
+                           
+                            <!-- <a [routerLink]="['/language', language._id]"></a>  -->
+                            
+                        </td>
+                        <!-- diese Spalten nur, wenn angemeldet...?-->       
+<!--                         <td>                            
+                            <a [routerLink]="['/developer', developer._id]"> <span id="pencil" class=" bi bi-pencil-square px-5 "></span></a>                           
+                        </td>
+                        <td>
+                            <span (click)="delete(developer._id)" id="trash" class=" bi bi-trash px-5 "></span>
+                        </td> -->
+                    </tr>
+                </tbody>
+    
+            </table>
+        </div>
+    </div>
+</div>
+    

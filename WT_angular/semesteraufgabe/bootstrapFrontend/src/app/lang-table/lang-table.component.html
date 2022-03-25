@@ -1,0 +1,39 @@
+<div id="all">
+
+    <div class="container mt-10">
+        <h3 class="m-3">Alle Programmiersprachen</h3>
+        <div class="table-responsive">
+            <!-- <table class="m-3 table table-striped table-hover"> -->
+                <table class="table table-hover">
+                <caption>Alle <code>languages</code></caption>
+                <thead>
+                    <tr>
+                        <!-- <th scope="col ">Vorname</th> -->
+                        <th scope="col ">Name</th>
+                        <th scope="col ">Jahr</th>
+                        <!-- <th scope="col ">Info</th> -->
+                        <!-- <th scope="col ">bearbeiten</th> -->
+                        <th scope="col ">löschen</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let language of languages; ">                        
+                        <td>{{ language.name }}</td>
+                        <td>{{ language.year }}</td>
+<!--                         <td>{{ language.gender }}</td>
+                        <td>{{ language.url }}</td>   -->
+                        <!-- diese Spalten nur, wenn angemeldet...?-->       
+                        <td>                            
+                            <!-- <a [routerLink]="['/language', language._id]"> <span id="pencil" class=" bi bi-pencil-square px-5 "></span></a>                            -->
+                        </td>
+<!--                         <td>
+                            <span (click)="delete(language._id)" id="trash" class=" bi bi-trash px-5 "></span>
+                        </td> -->
+                    </tr>
+                </tbody>
+    
+            </table>
+        </div>
+    </div>
+</div>
+    
