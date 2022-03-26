@@ -24,7 +24,7 @@ router.get('/:id', async(req, res) => {
 })
 
 // post one developer
-router.post('/', async(req, res) => {
+router.post('/new', async(req, res) => {
     const newDeveloper = new Developer({
         name: req.body.name,
         firstname: req.body.firstname,

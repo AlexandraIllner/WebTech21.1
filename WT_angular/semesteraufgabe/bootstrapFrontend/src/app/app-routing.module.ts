@@ -8,6 +8,7 @@ import { LangTableComponent } from './lang-table/lang-table.component';
 import { DevdetailComponent } from './dev-detail/dev-detail.component';
 import { TesttableComponent } from './testtable/testtable.component';
 import { LangDetailComponent } from './lang-detail/lang-detail.component';
+import { NewComponent } from './new/new.component';
 
 
 const routes: Routes = [{
@@ -23,10 +24,10 @@ const routes: Routes = [{
     path: "developer/:id",
     component: DevdetailComponent
   },
-  {
+/*   {
     path: "developer/new",
     component: DevdetailComponent
-  },
+  }, */
   {
     path: "langtable",
     component: LangTableComponent
@@ -36,8 +37,8 @@ const routes: Routes = [{
     component: LangDetailComponent
   },
   {
-    path: "language/new",
-    component: LangDetailComponent
+    path: "new",
+    component: NewComponent
   },
   {
     path: "test",

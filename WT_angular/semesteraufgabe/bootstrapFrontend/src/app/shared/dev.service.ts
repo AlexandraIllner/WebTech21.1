@@ -23,6 +23,18 @@ export class DevService {
     return this.http.patch<Developer>(this.baseUrl + '/' + id, data);
   }
 
+  create(data: Developer): void {
+    this.http.post<Developer>(this.baseUrl, data)
+      .subscribe(
+        response => {
+          console.log(response);
+        },
+        error => {
+          console.log(error);
+        }
+      );
+  }
+
   //Typ any, weil evtl. kein Dev-Objekt (mehr) vorhanden --> dann error-Objekt. response gibt den HTTP-Status zurück im backend
   deleteOne(id: string): Observable<any> {
     return this.http.delete<any>(this.baseUrl + '/' + id, {observe: 'response'});

@@ -50,7 +50,7 @@ export class LangDetailComponent implements OnInit {
                 this.language = response;
                 console.log(this.language);
 
-                // mit setValue alle Werte setzen --> create?
+                
                 this.formular.patchValue({
                   paradigmControl: this.language?.paradigm,
                   nameControl: this.language?.name,

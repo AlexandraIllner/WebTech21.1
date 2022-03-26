@@ -23,8 +23,11 @@ export class LangService {
     return this.http.patch<Language>(this.baseUrl + '/' + id, data);
   }
 
-  post() {
-    console.log("ich muss noch implementiert werden")
+  create(data: Language): Observable<Language> {
+    console.log("LangService: create - data:");
+    console.log(data);
+    return this.http.post<Language>(this.baseUrl + '/', data);
+      
   }
 
   //Typ any, weil evtl. kein Dev-Objekt (mehr) vorhanden --> dann error-Objekt. response gibt den HTTP-Status zurück im backend

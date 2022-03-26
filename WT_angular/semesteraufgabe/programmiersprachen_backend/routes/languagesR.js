@@ -24,17 +24,18 @@ router.get('/:id', async(req, res) => {
 })
 
 // post one language
-router.post('/new', async(req, res) => {
+router.post('/', async(req, res) => {
     const newLanguage = new Language({
         name: req.body.name,
         token: req.body.token,
         year: req.body.year,
-		paradigm: this.body.paradigm,
-		helloworld: this.body.helloworld,
+		paradigm: req.body.paradigm,
+		helloworld: req.body.helloworld,
         info: req.body.info
+
     })
     await newLanguage.save();
-    //console.log(newLanguage);
+    console.log(newLanguage);
     res.send(newLanguage);
 });
 

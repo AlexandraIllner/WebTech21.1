@@ -1,0 +1,72 @@
+<main class="d-flex min-vh-100">
+  <fieldset class="container  mt-5">
+      
+      <legend *ngIf="!language" class="mb-4">Neue Programmiersprache anlegen</legend>
+      <!--für Anmeldung an submit-event des Buttons unten, wenn der geclickt wird update() ausgeführt-->
+      <form [formGroup]="formular" (ngSubmit)="create()">
+          <div class="form-group row">
+              <label class="col-2 col-form-label" for="name">Name</label>
+              <input type="text" class="col-10 form-control" id="name" placeholder="Name" formControlName="nameControl">
+          </div>
+          <div class="form-group row">
+              <label class="col-2 col-form-label" for="token">Kürzel</label>
+              <input type="token" class="col-10 form-control" id="token" placeholder="Kürzel" formControlName="tokenControl">
+          </div>
+          <div class="form-group row">
+              <label class="col-2 col-form-label" for="year">Jahr</label>
+              <input type="text" class="col-10 form-control" id="year" placeholder="Jahr" formControlName="yearControl">
+          </div>
+          <div class="form-group row">
+              <label class="col-2 col-form-label" for="paradigm">Paradigma</label>
+              <input type="text" class="col-10 form-control" id="paradigm" placeholder="Paradigma" formControlName="paradigmControl">
+          </div>
+          <div class="form-group row">
+              <label class="col-2 col-form-label" for="info">Info</label>
+              <input type="info" class="col-10 form-control" id="info" placeholder="URL o.ä." formControlName="infoControl">
+          </div>
+          <div class="form-group row  justify-content-end">
+              <button type="submit" class="col-4 btn btn-secondary">Sprache speichern</button>
+              <div class="col-2"></div>
+              <button type="button" class="col-4 btn btn-secondary" (click)="cancel() ">Abbrechen</button>
+          </div>
+      </form>
+  </fieldset>
+</main>
+
+
+<!-- <div class="container">
+  <h1>hier ist new</h1>
+    <form [formGroup]="formular" (ngSubmit)="onSubmit()">
+      <div class="form-group row">
+        <label class="col-2 col-form-label" for="name">Name</label>
+                <input type="text" class="col-10 form-control" id="name" placeholder="Name" formControlName="nameControl">
+            </div>
+            <div class="form-group row">
+                <label class="col-2 col-form-label" for="token">Kürzel</label>
+                <input type="token" class="col-10 form-control" id="token" placeholder="Kürzel" formControlName="tokenControl">
+            </div>
+            <div class="form-group row">
+                <label class="col-2 col-form-label" for="year">Jahr</label>
+                <input type="text" class="col-10 form-control" id="year" placeholder="Jahr" formControlName="yearControl">
+            </div>
+            <div class="form-group row">
+                <label class="col-2 col-form-label" for="paradigm">Paradigma</label>
+                <input type="text" class="col-10 form-control" id="paradigm" placeholder="Paradigma" formControlName="paradigmControl">
+            </div>
+            <div class="form-group row">
+                <label class="col-2 col-form-label" for="info">Info</label>
+                <input type="info" class="col-10 form-control" id="info" placeholder="URL o.ä." formControlName="infoControl">
+            </div>
+  
+      <div class="form-group row">
+        <div class="col-sm-6">
+          <button type="submit" class="btn btn-primary btn-block" [disabled]="!formular.valid">Create</button>
+        </div>
+        <div class="col-sm-6">
+          <button type="cancel" class="btn btn-secondary btn-block" (click)="cancel()">Cancel</button>
+        </div>
+      </div>
+    </form>
+  </div>
+  
+ -->
