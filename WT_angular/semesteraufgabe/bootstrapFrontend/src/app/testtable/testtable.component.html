@@ -1,4 +1,5 @@
-<!-- <div id="accordion">
+<main class= "container-md">
+  <!-- <div id="accordion">
     <button data-target="#demo" data-toggle="collapse">Press me</button>
     <div class="collapse" id="demo">
     Collapsible content
@@ -31,6 +32,13 @@
 <button type="button" class="btn btn-link">Link</button> -->
 
 
+<div class="mb-3">
+  <label for="formFile" class="form-label">Default file input example</label>
+  <input class="form-control" type="file" id="formFile">
+</div>
+
+
+
 <table class="table">
     <thead>
       <tr>
@@ -47,32 +55,248 @@
         <td>Otto</td>
         <td>@mdo</td>
       </tr>
+
       <tr>
-        <th scope="row">2</th>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>@fat</td>
-      </tr>
-      <tr>
-        <div class="accordion" id="accordionExample">
-        <div class="accordion-item">
-            <h2 class="accordion-header" id="headingOne">
-              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                Accordion Item
+        <div class="accordion accordion-flush" id="accordionFlushExample">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="flush-headingOne">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                Accordion Item #1
               </button>
             </h2>
-            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-              <div class="accordion-body">
-                <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds 
-                the appropriate classes that we use to style each element. These classes control the overall appearance, as well as 
-                the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. 
-                It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does 
-                limit overflow.
-              </div>
+            <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+              <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the first item's accordion body.</div>
             </div>
           </div>
           </div>
       </tr>
+
     </tbody>
   </table>
+
+  <div>
+    <a class="btn btn-primary" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+      Link with href
+    </a>
+    <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+      Button with data-bs-target
+    </button>
+    
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <div>
+          Some text as placeholder. In real life you can have the elements you have chosen. Like, text, images, lists, etc.
+        </div>
+        <div class="dropdown mt-3">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown">
+            Dropdown button
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="alert alert-warning alert-dismissible fade show" role="alert">
+    <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+    <i class="bi bi-exclamation-octagon-fill"></i>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+  <div class="alert alert-danger d-flex align-items-center" role="alert">
+    <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-exclamation-octagon-fill" viewBox="0 0 16 16">
+      <path d="M11.46.146A.5.5 0 0 0 11.107 0H4.893a.5.5 0 0 0-.353.146L.146 4.54A.5.5 0 0 0 0 4.893v6.214a.5.5 0 0 0 .146.353l4.394 4.394a.5.5 0 0 0 .353.146h6.214a.5.5 0 0 0 .353-.146l4.394-4.394a.5.5 0 0 0 .146-.353V4.893a.5.5 0 0 0-.146-.353L11.46.146zM8 4c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995A.905.905 0 0 1 8 4zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+    </svg>
+    <i class="bi bi-exclamation-octagon-fill"></i>
+    <div>
+      An example danger alert with an icon
+      
+    </div>
+  </div>
+  <div class="container">
+    <div class="col-md-12">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            Employee
+          </div>
+          <div class="panel-body">
+            <table class="table table-condensed table-striped">
+      <thead>
+          <tr>
+            <th></th>
+            <th>Fist Name</th>
+            <th>Last Name</th>
+            <th>City</th>
+            <th>State</th>
+            <th>Status</th>
+          </tr>
+      </thead>
+  
+      <tbody>
+          <tr data-toggle="collapse" data-target="#demo1" class="accordion-toggle">
+             <td><button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></td>
+              <td>Carlos</td>
+              <td>Mathias</td>
+              <td>Leme</td>
+              <td>SP</td>
+              <td>new</td>
+          </tr>
+        
+          <tr>
+              <td colspan="12" class="hiddenRow">
+                <div class="accordian-body collapse" id="demo1"> 
+                <table class="table table-striped">
+                        <thead>
+                          <tr class="info">
+                            <th>Job</th>
+                            <th>Company</th>
+                            <th>Salary</th>		
+                            <th>Date On</th>	
+                            <th>Date off</th>	
+                            <th>Action</th>	
+                          </tr>
+                        </thead>	
+                        
+                        <tbody>
+                          
+                          <tr data-toggle="collapse"  class="accordion-toggle" data-target="#demo10">
+                            <td> <a href="#">Enginner Software</a></td>
+                            <td>Google</td>
+                            <td>U$8.00000 </td>
+                            <td> 2016/09/27</td>
+                            <td> 2017/09/27</td>
+                            <td> 
+                              <a href="#" class="btn btn-default btn-sm">
+                                    <i class="glyphicon glyphicon-cog"></i>
+                                </a>
+                            </td>
+                          </tr>
+                          
+                           <tr>
+              <td colspan="12" class="hiddenRow">
+                <div class="accordian-body collapse" id="demo10"> 
+                <table class="table table-striped">
+                        <thead>
+                          <tr>
+                            <td><a href="#"> XPTO 1</a></td>
+                            <td>XPTO 2</td>
+                            <td>Obs</td>
+                          </tr>
+                          <tr>
+                            <th>item 1</th>
+                            <th>item 2</th>
+                            <th>item 3 </th>
+                            <th>item 4</th>
+                            <th>item 5</th>
+                            <th>Actions</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>item 1</td>
+                            <td>item 2</td>
+                            <td>item 3</td>
+                            <td>item 4</td>
+                            <td>item 5</td>
+                            <td>
+                                <a href="#" class="btn btn-default btn-sm">
+                                  <i class="glyphicon glyphicon-cog"></i>
+                                </a>
+                            </td>
+                          </tr>
+                        </tbody>
+                   </table>
+                
+                </div> 
+            </td>
+          </tr>
+                                                      
+                          <tr>
+                            <td>Scrum Master</td>
+                            <td>Google</td>
+                            <td>U$8.00000 </td>
+                            <td> 2016/09/27</td>
+                            <td> 2017/09/27</td>
+                            <td> <a href="#" class="btn btn-default btn-sm">
+                                    <i class="glyphicon glyphicon-cog"></i>
+                                </a>
+                            </td>
+                          </tr>
+                          
+                              
+                          <tr>
+                            <td>Back-end</td>
+                            <td>Google</td>
+                            <td>U$8.00000 </td>
+                            <td> 2016/09/27</td>
+                            <td> 2017/09/27</td>
+                            <td> <a href="#" class="btn btn-default btn-sm">
+                                    <i class="glyphicon glyphicon-cog"></i>
+                                </a>
+                            </td>
+                          </tr>
+                          
+                              
+                          <tr>
+                            <td>Front-end</td>
+                            <td>Google</td>
+                            <td>U$8.00000 </td>
+                            <td> 2016/09/27</td>
+                            <td> 2017/09/27</td>
+                            <td> <a href="#" class="btn btn-default btn-sm">
+                                    <i class="glyphicon glyphicon-cog"></i>
+                                </a>
+                            </td>
+                          </tr>
+                  
+                 
+                        </tbody>
+                   </table>
+                
+                </div> 
+            </td>
+          </tr>
+        
+        
+        
+          <tr data-toggle="collapse" data-target="#demo2" class="accordion-toggle">
+               <td><button class="btn btn-default btn-xs"><span class="glyphicon glyphicon-eye-open"></span></button></td>
+               <td>Silvio</td>
+              <td>Santos</td>
+              <td>São Paulo</td>
+              <td>SP</td>
+            <td> new</td>
+          </tr>
+          <tr>
+              <td colspan="6" class="hiddenRow"><div id="demo2" class="accordian-body collapse">Demo2</div></td>
+          </tr>
+          <tr data-toggle="collapse" data-target="#demo3" class="accordion-toggle">
+              <td><button class="btn btn-default btn-xs"><span class="glyphicon glyphicon-eye-open"></span></button></td>
+              <td>John</td>
+              <td>Doe</td>
+              <td>Dracena</td>
+              <td>SP</td>
+            <td> New</td>
+          </tr>
+          <tr>
+              <td colspan="6" class="hiddenRow"><div id="demo3" class="accordian-body collapse">Demo3 sadasdasdasdasdas</div></td>
+          </tr>
+      </tbody>
+  </table>
+              </div>
+          
+            </div> 
+          
+        </div>
+    </div>
+  
  
+</main>

@@ -1,11 +1,11 @@
 <div id="all">
 
     <div class="container mt-10">
-        <h3 class="mb-4">Alle an den aufgeführten Programmiersprachen Entwickelnden </h3>
+        <h3 class="mb-4">Entwickler*innen, die an den hier gelisteten Programmiersprachen mitarbeiteten </h3>
         <div class="table-responsive">
             <!-- <table class="m-3 table table-striped table-hover"> -->
                 <table class="table table-hover">
-                <caption>Alle <code>developers</code></caption>
+                <caption>Alle <code>Entwickelnden</code></caption>
                 <thead>
                     <tr>
                         <th scope="col-2 ">Vorname</th>
@@ -28,18 +28,19 @@
                         <td>hier sehr schicke <br>Implementierung einfügen</td>
                         <td>
                             <!-- hier muss jetzt irgendwie ein zugriff erfolgen auf die developer mit dem enstpr. token als collabo,
-                            evtl. über ausgabe der token, aber dann muss immer noch von hier aus ein zugriff auf language möglich sein -->
+                            evtl. über ausgabe der token, aber dann muss immer noch von hier aus ein zugriff auf language möglich sein (?) 
+                        außerdem: was wird angezeigt? der tabelleneintrag oder was anderes-->
                            
                             <!-- <a [routerLink]="['/language', language._id]"></a>  -->
                             
                         </td>
                         <!-- diese Spalten nur, wenn angemeldet...?-->       
-<!--                         <td>                            
+                        <td>                            
                             <a [routerLink]="['/developer', developer._id]"> <span id="pencil" class=" bi bi-pencil-square px-5 "></span></a>                           
                         </td>
                         <td>
                             <span (click)="delete(developer._id)" id="trash" class=" bi bi-trash px-5 "></span>
-                        </td> -->
+                        </td>
                     </tr>
                 </tbody>
     

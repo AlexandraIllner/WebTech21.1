@@ -3,7 +3,7 @@ export interface Language {
     name: string;
     token: string;
     year: string;
-    paradign: string;
+    paradigm: string;
     helloworld: string;
     info: string;
 }

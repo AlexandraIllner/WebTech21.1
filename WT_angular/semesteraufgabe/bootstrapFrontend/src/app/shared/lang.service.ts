@@ -23,6 +23,10 @@ export class LangService {
     return this.http.patch<Language>(this.baseUrl + '/' + id, data);
   }
 
+  post() {
+    console.log("ich muss noch implementiert werden")
+  }
+
   //Typ any, weil evtl. kein Dev-Objekt (mehr) vorhanden --> dann error-Objekt. response gibt den HTTP-Status zurück im backend
   deleteOne(id: string): Observable<any> {
     return this.http.delete<any>(this.baseUrl + '/' + id, {observe: 'response'});

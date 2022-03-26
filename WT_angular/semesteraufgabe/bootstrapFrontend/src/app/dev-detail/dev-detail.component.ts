@@ -78,7 +78,7 @@ export class DevdetailComponent implements OnInit {
           console.log(error);
         }
       );
-    this.router.navigateByUrl('/table');
+    this.router.navigateByUrl('/devtable');
   }
 
   
