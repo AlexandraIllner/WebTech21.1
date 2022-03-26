@@ -1,0 +1,32 @@
+<main class="d-flex min-vh-100">
+    <fieldset class="container  mt-5">
+        
+        <legend *ngIf="!developer" class="mb-4">Neue Programmiersprache anlegen</legend>
+        <!--für Anmeldung an submit-event des Buttons unten, wenn der geclickt wird update() ausgeführt-->
+        <form [formGroup]="formular" (ngSubmit)="create()">
+            <div class="form-group row">
+                <label class="col-2 col-form-label" for="name">Name</label>
+                <input type="text" class="col-10 form-control" id="name" placeholder="Name" formControlName="nameControl">
+            </div>
+            <div class="form-group row">
+                <label class="col-2 col-form-label" for="firstname">Vorname</label>
+                <input type="firstname" class="col-10 form-control" id="firstname" placeholder="Vorname" formControlName="firstnameControl">
+            </div>
+            <div class="form-group row">
+                <label class="col-2 col-form-label" for="gender">Gender</label>
+                <input type="text" class="col-10 form-control" id="gender" placeholder="Gender" formControlName="genderControl">
+            </div>
+
+            <div class="form-group row">
+                <label class="col-2 col-form-label" for="url">Info</label>
+                <input type="url" class="col-10 form-control" id="url" placeholder="URL o.ä." formControlName="urlControl">
+            </div>
+            <div class="form-group row  justify-content-end">
+                <button type="submit" class="col-4 btn btn-secondary">Entwickler*in speichern</button>
+                <div class="col-2"></div>
+                <button type="button" class="col-4 btn btn-secondary" (click)="cancel() ">Abbrechen</button>
+            </div>
+        </form>
+    </fieldset>
+  </main>
+  

@@ -23,7 +23,7 @@ export class DevService {
     return this.http.patch<Developer>(this.baseUrl + '/' + id, data);
   }
 
-  create(data: Developer): void {
+  create(data: Developer): Observable<Developer> {
     this.http.post<Developer>(this.baseUrl, data)
       .subscribe(
         response => {
@@ -33,6 +33,7 @@ export class DevService {
           console.log(error);
         }
       );
+      return this.http.patch<Developer>(this.baseUrl + '/', data);
   }
 
   //Typ any, weil evtl. kein Dev-Objekt (mehr) vorhanden --> dann error-Objekt. response gibt den HTTP-Status zurück im backend

@@ -3,8 +3,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Location } from '@angular/common';
 
-import { LangService } from '../shared/lang.service';
-import { Language } from "../shared/language";
+import { LangService } from '../../shared/lang.service';
+import { Language } from "../../shared/language";
 
 @Component({
   selector: 'app-lang-detail',

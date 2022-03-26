@@ -1,10 +1,10 @@
-import { Component, ComponentFactoryResolver, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {ActivatedRoute, Router} from '@angular/router';
 import { Location } from '@angular/common';
 
-import {Language} from './../shared/language';
-import {LangService} from './../shared/lang.service';
+import {Language} from '../../shared/language';
+import {LangService} from '../../shared/lang.service';
 
 @Component({
   selector: 'app-new',

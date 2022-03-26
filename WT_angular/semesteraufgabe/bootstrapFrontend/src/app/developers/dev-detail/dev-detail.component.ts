@@ -3,8 +3,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Location } from '@angular/common';
 
-import { DevService } from '../shared/dev.service';
-import { Developer } from "../shared/developer";
+import { DevService } from '../../shared/dev.service';
+import { Developer } from "../../shared/developer";
 
 @Component({
   selector: 'app-dev-detail',

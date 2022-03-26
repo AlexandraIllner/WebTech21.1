@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { LangService } from '../shared/lang.service';
-import { Language } from '../shared/language';
+import { LangService } from '../../shared/lang.service';
+import { Language } from '../../shared/language';
 
 @Component({
   selector: 'app-lang-table',

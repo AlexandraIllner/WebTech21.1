@@ -2,6 +2,8 @@ const express = require('express');
 const router = express.Router();
 const Language = require('../models/languagesM');
 
+
+//HTTP-Funktionen:
 // get all languages
 router.get('/', async(req, res) => {
     const allLanguages = await Language.find();

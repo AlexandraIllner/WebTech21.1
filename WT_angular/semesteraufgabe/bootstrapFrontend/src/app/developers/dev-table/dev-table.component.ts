@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { DevService } from '../shared/dev.service';
-import { Developer } from '../shared/developer';
+import { DevService } from '../../shared/dev.service';
+import { Developer } from '../../shared/developer';
 
 @Component({
   selector: 'app-dev-table',
