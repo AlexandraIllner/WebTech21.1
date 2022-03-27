@@ -1,6 +1,38 @@
 const express = require('express');
 const router = express.Router();
 const Language = require('../models/languagesM');
+const Developer = require('../models/developersM');
+
+
+/* diese Variante ginge wohl nur mit numerischer id (?)
+var dblanguage = [];
+  
+Language.find({ token: "php" })
+	.then(data => {
+		console.log("php language:")
+		console.log(data);
+
+		// Putting all course id's in dblanguage arrray
+		data.map((d, k) => {
+			dblanguage.push(d.token);
+		})
+
+		// Getting students who are enrolled in any
+		// database course by filtering students
+		// whose courseId matches with any id in
+		// dblanguage array
+		Developer.find({ collaboration: { $in: dblanguage } })
+			.then(data => {
+				console.log("Developers in PHP:")
+				console.log(data);
+			})
+			.catch(error => {
+				console.log(error);
+			})
+	})
+	.catch(error => {
+		console.log(error);
+	})  */
 
 
 //HTTP-Funktionen:

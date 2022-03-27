@@ -36,7 +36,7 @@ export class NewDevComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.id = this.route.snapshot.paramMap.get('id') || '';
+    //this.id = this.route.snapshot.paramMap.get('id') || '';
     //this.readOne(this.id);
   }
 
@@ -65,10 +65,10 @@ export class NewDevComponent implements OnInit {
         }
       );
     console.log("created!");
-    this.router.navigate(['/devtable']);
+    this.router.navigate(['devtable']);
   }
 
   cancel(): void {
-    this.router.navigate(['/devtable']);
+    this.router.navigate(['devtable']);
   }
 }

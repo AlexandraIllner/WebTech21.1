@@ -13,7 +13,7 @@ const app = express();
 const PORT = 3000;
 
 app.use(express.json());
-// enable cors for all requests TODO: sinnvoll für alle requests??? dann statt dem hier in anfrage app.get("/", cors(), (req, res)...
+// enable cors for all requests TODO: sinnvoll für alle requests??? wenn nicht: statt dem hier in anfrage app.get("/", cors(), (req, res)...
 app.use(cors());
 
 // AUSSCHLIESSLICH HIER WIRD IRGENDWAS AN DIE URL GEHÄNGT!!!! Menno

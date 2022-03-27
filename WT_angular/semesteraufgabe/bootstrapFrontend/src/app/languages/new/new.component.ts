@@ -68,11 +68,11 @@ export class NewComponent implements OnInit {
         }
       );
     console.log("created!");
-    this.router.navigate(['/langtable']);
+    this.router.navigate(['langtable']);
   }
 
   cancel(): void {
-    this.router.navigate(['/langtable']);
+    this.router.navigate(['langtable']);
   }
 }
 

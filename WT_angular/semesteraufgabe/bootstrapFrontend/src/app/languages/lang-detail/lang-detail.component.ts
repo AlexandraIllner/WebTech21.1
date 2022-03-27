@@ -21,8 +21,7 @@ export class LangDetailComponent implements OnInit {
     private service: LangService,
     private builder: FormBuilder,
     private currentLocation: Location,
-    private router: Router
-    
+    private router: Router    
   ) 
   {
     this.formular = this.builder.group(
