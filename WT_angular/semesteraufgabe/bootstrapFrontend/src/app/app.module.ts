@@ -17,6 +17,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { TesttableComponent } from './testtable/testtable.component';
 import { LangDetailComponent } from './languages/lang-detail/lang-detail.component';
 import { NewComponent } from './languages/new/new.component';
+import { UpdateComponent } from './languages/update/update.component';
 
 
 
@@ -32,7 +33,8 @@ import { NewComponent } from './languages/new/new.component';
     TesttableComponent,
     LangDetailComponent,
     NewComponent,
-    NewDevComponent
+    NewDevComponent,
+    UpdateComponent
     
 
   ],

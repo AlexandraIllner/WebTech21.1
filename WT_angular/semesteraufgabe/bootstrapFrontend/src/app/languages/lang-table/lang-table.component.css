@@ -1,5 +1,13 @@
 @import url('../../../../node_modules/bootstrap-icons/font/bootstrap-icons.css');
 
-th {
-    text-align: justify;
+.col-sm-6 {
+    padding-top: 2%;
+}
+
+.card-header, .col {
+    text-align: center;
+}
+
+.thead {
+    text-align: center;
 }

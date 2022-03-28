@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { BackendService } from 'src/app/shared/backend.service';
 
-import { DevService } from '../../shared/dev.service';
+//import { DevService } from '../../shared/dev.service';
 import { Developer } from '../../shared/developer';
 
 @Component({
@@ -14,14 +15,14 @@ export class DevTableComponent implements OnInit {
   deleted = false;
 
   //wann wird eigentlich was wo deklariert???
-  constructor(private service: DevService, private router: Router) { }
+  constructor(private service: BackendService, private router: Router) { }
 
   ngOnInit(): void {
     this.readAll();
   }
 
   readAll(): void {
-    this.service.getAll().subscribe(
+    this.service.getAllDev().subscribe(
       (
         response: Developer[]) => {
                 this.developers = response;
@@ -33,7 +34,7 @@ export class DevTableComponent implements OnInit {
   }
 
   delete(id: string): void {
-    this.service.deleteOne(id).subscribe(
+    this.service.deleteOneDev(id).subscribe(
       (
         response: any) => {
           console.log('response : ', response);

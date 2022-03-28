@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+/* import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Language } from './language';
@@ -7,12 +7,14 @@ import { Language } from './language';
   providedIn: 'root'
 })
 export class LangService {
+  //definiert im backend in server.js
   baseUrl = 'http://localhost:3000/languages'
 
   constructor(private http: HttpClient) { }
 
   getAll(): Observable<Language[]>{
-    return this.http.get<Language[]>(this.baseUrl);
+    //definiert im backend in languagesR
+    return this.http.get<Language[]>(this.baseUrl + '/all');
   }
 
   getOne(id: string): Observable<Language>{
@@ -26,8 +28,7 @@ export class LangService {
   create(data: Language): Observable<Language> {
     console.log("LangService: create - data:");
     console.log(data);
-    return this.http.post<Language>(this.baseUrl + '/', data);
-      
+    return this.http.post<Language>(this.baseUrl + '/', data);      
   }
 
   //Typ any, weil evtl. kein Dev-Objekt (mehr) vorhanden --> dann error-Objekt. response gibt den HTTP-Status zurück im backend
@@ -37,3 +38,4 @@ export class LangService {
 
 
 }
+ */

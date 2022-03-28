@@ -1,3 +1,21 @@
-main {
-    background-color: blue;
+.container-sm {
+    background-color: antiquewhite;
+    padding-left: 20%;
+    padding-top: 2%;
+    padding-bottom: 5%;
+    margin: auto;
+}
+
+.card {
+    background-color: burlywood;   
+}
+
+.card-header {
+    background-color: wheat;
+}
+
+.helloworld {
+    background-color: brown;
+    color: antiquewhite;
+    font-size: x-small;
 }

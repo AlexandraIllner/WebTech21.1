@@ -1,43 +1,12 @@
 const express = require('express');
 const router = express.Router();
+//jetzt auch in routes.js
 const Language = require('../models/languagesM');
-const Developer = require('../models/developersM');
+//const Developer = require('../models/developersM');
 
+//HTTP-Funktionen (/xyz wird an in server.js definierte route gehängt):
 
-/* diese Variante ginge wohl nur mit numerischer id (?)
-var dblanguage = [];
-  
-Language.find({ token: "php" })
-	.then(data => {
-		console.log("php language:")
-		console.log(data);
-
-		// Putting all course id's in dblanguage arrray
-		data.map((d, k) => {
-			dblanguage.push(d.token);
-		})
-
-		// Getting students who are enrolled in any
-		// database course by filtering students
-		// whose courseId matches with any id in
-		// dblanguage array
-		Developer.find({ collaboration: { $in: dblanguage } })
-			.then(data => {
-				console.log("Developers in PHP:")
-				console.log(data);
-			})
-			.catch(error => {
-				console.log(error);
-			})
-	})
-	.catch(error => {
-		console.log(error);
-	})  */
-
-
-//HTTP-Funktionen:
-// get all languages
-router.get('/', async(req, res) => {
+router.get('/all', async(req, res) => {
     const allLanguages = await Language.find();
     //console.log(allLanguages);
     res.send(allLanguages);
@@ -56,6 +25,20 @@ router.get('/:id', async(req, res) => {
         });
     }
 })
+
+router.get('/lang/:name', async(req, res) => {
+    try {
+        const allLanguages = await Language.find({ name: req.params.name }).exec;
+        //await MyModel.find({ name: 'john', age: { $gte: 18 } }).exec();
+        console.log(req.params);
+        res.send(oneLanguage);
+    } catch {
+        res.status(404);
+        res.send({
+            error: "Language does not exist!"
+        });
+    }
+});
 
 // post one language
 router.post('/', async(req, res) => {
@@ -122,6 +105,37 @@ router.delete('/:id', async(req, res) => {
         res.send({ error: "Language does not exist!" })
     }
 });
+
+
+/* diese Variante ginge wohl nur mit numerischer id (?)
+var dblanguage = [];
+  
+Language.find({ token: "php" })
+	.then(data => {
+		console.log("php language:")
+		console.log(data);
+
+		// Putting all course id's in dblanguage arrray
+		data.map((d, k) => {
+			dblanguage.push(d.token);
+		})
+
+		// Getting students who are enrolled in any
+		// database course by filtering students
+		// whose courseId matches with any id in
+		// dblanguage array
+		Developer.find({ collaboration: { $in: dblanguage } })
+			.then(data => {
+				console.log("Developers in PHP:")
+				console.log(data);
+			})
+			.catch(error => {
+				console.log(error);
+			})
+	})
+	.catch(error => {
+		console.log(error);
+	})  */
 
 module.exports = router;
 

@@ -1,28 +1,9 @@
-<div class="container-sm">
-    <div class="col-sm-8">
-        <div class="card">
-            <div class="card-header">
-                <h1 *ngIf="language">Details zu {{ language.name }}</h1>
-                <h5>{{language.year}}</h5>
-                <h6>{{language.paradigm}}</h6>
-            </div>
-            <div class="card-body">
-                <div class="helloworld">
-                    {{language.helloworld}}
-                </div>
-            </div>
-            <footer>
-                <a href="{{language.info}}">Mehr Info</a>
-            </footer>
-        </div>
-    </div>
-</div>
-<!-- <main class="d-flex min-vh-100">
+<main class="d-flex min-vh-100">
     <fieldset class="container  mt-5">
-        <legend *ngIf="language" class="mb-4">Details zu {{ language.name }} 
+        <legend *ngIf="language" class="mb-4">Eintrag von {{ language.name }} aktualisieren
         </legend>
         <legend *ngIf="!language" class="mb-4">Eintrag aktualisieren</legend>
-        <!-für Anmeldung an submit-event des Buttons unten, wenn der geclickt wird update() ausgeführt->
+        <!--für Anmeldung an submit-event des Buttons unten, wenn der geclickt wird update() ausgeführt-->
         <form [formGroup]="formular" (ngSubmit)="update()">
             <div class="form-group row">
                 <label class="col-2 col-form-label" for="name">Name</label>
@@ -44,6 +25,11 @@
                 <label class="col-2 col-form-label" for="info">Info</label>
                 <input type="info" class="col-10 form-control" id="info" placeholder="URL o.ä." formControlName="infoControl">
             </div>
+            <div class="form-group row">
+                <label class="col-2 col-form-label" for="helloworld">Hello World</label>
+                <input type="info" class="col-10 form-control" id="helloworld" placeholder="Hello World" formControlName="helloworldControl">
+            </div>
+
             <div class="form-group row  justify-content-end">
                 <button type="submit" class="col-4 btn btn-secondary">Aktualisieren</button>
                 <div class="col-2"></div>
@@ -52,4 +38,4 @@
         </form>
     </fieldset>
 </main>
- -->
+

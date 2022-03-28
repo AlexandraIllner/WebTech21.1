@@ -4,7 +4,8 @@ import {ActivatedRoute, Router} from '@angular/router';
 import { Location } from '@angular/common';
 
 import {Developer} from '../../shared/developer';
-import {DevService} from '../../shared/dev.service';
+//import {DevService} from '../../shared/dev.service';
+import { BackendService } from 'src/app/shared/backend.service';
 
 @Component({
   selector: 'app-new',
@@ -18,7 +19,7 @@ export class NewDevComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private service: DevService,
+    private service: BackendService,
     private builder: FormBuilder,
     private currentLocation: Location,
     private router: Router
@@ -54,7 +55,7 @@ export class NewDevComponent implements OnInit {
 
       console.log(this.developer);
     console.log("trying to create ...");
-    this.service.create(this.developer).subscribe(
+    this.service.createDev(this.developer).subscribe(
     
         response => {
           console.log(response);

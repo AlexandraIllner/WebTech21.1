@@ -3,8 +3,9 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Location } from '@angular/common';
 
-import { DevService } from '../../shared/dev.service';
+//import { DevService } from '../../shared/dev.service';
 import { Developer } from "../../shared/developer";
+import { BackendService } from 'src/app/shared/backend.service';
 
 @Component({
   selector: 'app-dev-detail',
@@ -18,7 +19,7 @@ export class DevdetailComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private service: DevService,
+    private service: BackendService,
     private builder: FormBuilder,
     private currentLocation: Location,
     private router: Router
@@ -42,13 +43,12 @@ export class DevdetailComponent implements OnInit {
   }
 
   readOne(id: string): void {
-      this.service.getOne(id).subscribe(
+      this.service.getOneDev(id).subscribe(
       (
         response: Developer) => {
                 this.developer = response;
                 console.log(this.developer);
-
-                // mit setValue alle Werte setzen --> create?
+                
                 this.formular.patchValue({
                   firstnameControl: this.developer?.firstname,
                   nameControl: this.developer?.name,
@@ -68,7 +68,7 @@ export class DevdetailComponent implements OnInit {
     this.developer.name = values.nameControl;
     this.developer.gender = values.genderControl;
     this.developer.url = values.urlControl;
-    this.service.update(this.id, this.developer)
+    this.service.updateDev(this.id, this.developer)
       .subscribe(
         response => {
           console.log(response);

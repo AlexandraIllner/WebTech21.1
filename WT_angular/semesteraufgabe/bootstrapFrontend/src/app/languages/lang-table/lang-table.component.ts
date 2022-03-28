@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-
-import { LangService } from '../../shared/lang.service';
+//import { LangService } from '../../shared/lang.service';
+import { BackendService } from '../../shared/backend.service';
 import { Language } from '../../shared/language';
 
 @Component({
@@ -14,14 +14,14 @@ export class LangTableComponent implements OnInit {
   deleted = false;
 
   //wann wird eigentlich was wo deklariert???
-  constructor(private service: LangService, private router: Router) { }
+  constructor(private service: BackendService, private router: Router) { }
 
   ngOnInit(): void {
     this.readAll();
   }
 
   readAll(): void {
-    this.service.getAll().subscribe(
+    this.service.getAllLang().subscribe(
       (
         response: Language[]) => {
                 this.languages = response;
@@ -33,7 +33,7 @@ export class LangTableComponent implements OnInit {
   }
 
   delete(id: string): void {
-    this.service.deleteOne(id).subscribe(
+    this.service.deleteOneLang(id).subscribe(
       (
         response: any) => {
           console.log('response : ', response);

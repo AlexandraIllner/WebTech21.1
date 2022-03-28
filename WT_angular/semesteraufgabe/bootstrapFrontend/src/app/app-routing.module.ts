@@ -10,6 +10,7 @@ import { TesttableComponent } from './testtable/testtable.component';
 import { LangDetailComponent } from './languages/lang-detail/lang-detail.component';
 import { NewComponent } from './languages/new/new.component';
 import { NewDevComponent } from './developers/newDev/newDev.component';
+import { UpdateComponent } from './languages/update/update.component';
 
 
 const routes: Routes = [{
@@ -25,28 +26,29 @@ const routes: Routes = [{
     path: "developer/:id",
     component: DevdetailComponent
   },
-/*   {
-    path: "developer/new",
-    component: DevdetailComponent
-  }, */
-  {
-    path: "langtable",
-    component: LangTableComponent
-  },
-  {
-    path: "language/:id",
-    component: LangDetailComponent
-  },
-  {
-    //hier Adressierung im Browser?
-    path: "new",
-    component: NewComponent
-  },  
   {
     //hier Adressierung im Browser?
     path: "newDev",
     component: NewDevComponent
   },
+  {
+    path: "langtable",
+    component: LangTableComponent
+  },
+  {
+    path: "language-update/:id",
+    component: UpdateComponent
+  },
+  {
+    //hier Adressierung im Browser?
+    path: "new",
+    component: NewComponent
+  }, 
+  {
+    path: "language-detail/:id",
+    component: LangDetailComponent
+  },
+ 
 
   {
     path: "test",
