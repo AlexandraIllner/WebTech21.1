@@ -18,7 +18,7 @@ Nach der Installation kann bei Bedarf mit dem npm-Paketmanager auch das Angular-
 npm install -g @angular/cli@13.2.6 
 ```
 
-installiert die Version, mit der die Anwendung erstellt wurde. Mit anderen Versionen könnte es zu Problemen kommen.
+installiert die Version, mit der die Anwendung erstellt wurde. 
 
 Zusätzlich muss auf dem System [MongoDB](https://www.mongodb.com/docs/manual/installation/) installiert sein.
 Für die initiale Befüllung gibt es leider noch kein Skript.
@@ -34,7 +34,7 @@ Anschließend das Verzeichnis bootstrapFrontend öffnen und starten.
 ng serve 
 ``` 
 
-Die Anwendung lässt sich nun in einem Browser unter localhost:4200 aufrufen.
+Die Anwendung lässt sich nun in einem Browser unter http://localhost:4200 aufrufen.
 
 ## Beschreibung
 
