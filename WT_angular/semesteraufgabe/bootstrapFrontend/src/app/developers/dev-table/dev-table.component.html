@@ -1,10 +1,10 @@
 <div id="all">
 
-    <div class="container mt-10">
-        <h3 class="mb-4">Entwickler*innen, die an den hier gelisteten Programmiersprachen mitarbeiteten </h3>
+    <div class="container-sm">
+        <h1 class="mb-4">Entwickler*innen, die an den hier gelisteten Programmiersprachen mitarbeiteten </h1>
         <div class="table-responsive">
             <!-- <table class="m-3 table table-striped table-hover"> -->
-                <table class="table table-hover">
+                <table class="table">
                 <caption>Alle <code>Entwickelnden</code></caption>
                 <thead>
                     <tr>
@@ -12,9 +12,9 @@
                         <th scope="col-2 ">Name</th>
                         <th scope="col-1 ">gender</th>
                         <th scope="col-1 ">Info</th>
-                        <th scope="col-1">Mitarbeit</th>
-<!--                         <th scope="col ">bearbeiten</th>
-                        <th scope="col ">löschen</th> -->
+                        <!-- <th scope="col-1">Mitarbeit</th> -->
+                         <th scope="col ">bearbeiten</th>
+                        <th scope="col ">löschen</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -25,15 +25,11 @@
                         <td>
                             <a href="{{ developer.url }}">Link</a>                             
                         </td>  
-                        <td>hier sehr schicke <br>Implementierung einfügen</td>
-                        <td>
-                            <!-- hier muss jetzt irgendwie ein zugriff erfolgen auf die developer mit dem enstpr. token als collabo,
-                            evtl. über ausgabe der token, aber dann muss immer noch von hier aus ein zugriff auf language möglich sein (?) 
-                        außerdem: was wird angezeigt? der tabelleneintrag oder was anderes-->
-                           
-                            <!-- <a [routerLink]="['/language', language._id]"></a>  -->
+<!--                         <td>hier sehr schicke <br>Implementierung einfügen</td>
+                        <td> 
+
                             
-                        </td>
+                        </td>-->
                         <!-- diese Spalten nur, wenn angemeldet...?-->       
                         <td>                            
                             <a [routerLink]="['/developer', developer._id]"> <span id="pencil" class=" bi bi-pencil-square px-5 "></span></a>                           

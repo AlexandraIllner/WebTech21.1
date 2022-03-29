@@ -18,6 +18,7 @@ import { TesttableComponent } from './testtable/testtable.component';
 import { LangDetailComponent } from './languages/lang-detail/lang-detail.component';
 import { NewComponent } from './languages/new/new.component';
 import { UpdateComponent } from './languages/update/update.component';
+//import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 
@@ -35,7 +36,6 @@ import { UpdateComponent } from './languages/update/update.component';
     NewComponent,
     NewDevComponent,
     UpdateComponent
-    
 
   ],
   imports: [
@@ -44,6 +44,7 @@ import { UpdateComponent } from './languages/update/update.component';
     BrowserAnimationsModule,
     HttpClientModule,
     ReactiveFormsModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

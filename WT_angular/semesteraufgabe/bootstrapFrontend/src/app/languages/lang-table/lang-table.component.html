@@ -13,7 +13,7 @@
                         <thead>
                             <tr>
                                 <th>Name</th>
-                                <!-- <th scope="col ">Jahr</th> -->
+                                <th scope="col ">Jahr</th>
                                 <!-- <th scope="col "><span>Info</span></th> -->
                                 <!-- <th scope="col">Hello World</th> -->
                                 <th>bearbeiten</th>
@@ -24,16 +24,23 @@
                         <tbody>
                             <tr id = 'row' *ngFor="let language of languages; ">                        
                                 <td>
-                                    <a [routerLink]="['/language-detail', language._id]">{{language.name }}</a>                                        
+                                    <a [routerLink]="['/language-detail', language._id]" title="Detailangaben">{{language.name }}</a>                                        
                                 </td>
-                                <!-- <td>{{ language.year }}</td>
-                                <td>{{ language.helloworld }}</td>
-                                <td>{{ language.info }}</td>    -->
+                                <td>{{ language.year }}</td>
+                                <!-- <td>{{ language.helloworld }}</td>
+                                <td>{{ language.info }}</td> -->
                                 <!-- diese Spalten nur, wenn angemeldet...?-->       
                                 <td>                            
                                     <a [routerLink]="['/language-update', language._id]"> <span id="pencil" class=" bi bi-pencil-square px-5 "></span></a>
                                 </td>
                                 <td>
+                                    <!-- <ngb-alert [type]="alert.type" (closed)="close(alert)">{{ alert.message }}</ngb-alert>-->
+<!--                                     <p>
+                                        <ngb-alert [dismissible]="false" 
+                                                   type='success'>
+                                          <strong>GeeksforGeeks</strong>
+                                        </ngb-alert>
+                                      </p> -->
                                     <span (click)="delete(language._id)" id="trash" class=" bi bi-trash px-5 "></span>
                                 </td>
                             </tr>

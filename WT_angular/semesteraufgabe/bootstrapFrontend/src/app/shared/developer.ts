@@ -4,4 +4,5 @@ export interface Developer {
     firstname: string;
     gender: string;
     url: string;
+    collaboration: string;
 }

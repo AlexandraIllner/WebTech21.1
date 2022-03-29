@@ -27,7 +27,9 @@ router.get('/dev/:collaboration', async(req, res) => {
         const developers = await Developer.find({collaboration: req.params.collaboration}).exec();
         console.log(req.params);
         res.send(developers);
-    } catch {
+    } 
+     
+    catch {
         res.status(404);
         res.send({
             error: "Developer does not exist!"

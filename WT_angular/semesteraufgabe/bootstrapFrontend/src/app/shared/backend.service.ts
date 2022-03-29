@@ -42,13 +42,17 @@ export class BackendService {
   getAllDev(): Observable<Developer[]>{
     return this.http.get<Developer[]>(this.baseUrl + 'developers/all');
   }
-
-  getAllCollab(): Observable<Developer[]>{
-    return this.http.get<Developer[]>(this.baseUrl + 'developers/all');
-  }
+  
 
   getOneDev(id: string): Observable<Developer>{
     return this.http.get<Developer>(this.baseUrl + 'developers/' + id);
+  }
+
+  //was funktioniert hier nicht??????????????
+  getCollaborators(token: string): Observable<Developer[]>{
+    console.log("getCollaborators(" + token + ')');
+    //return this.http.get<Developer[]>(this.baseUrl + 'developers/dev/collaboration' + token);
+    return this.http.get<Developer[]>(this.baseUrl + 'developers/dev/' + token);
   }
 
   updateDev(id: string, data: Developer): Observable<Developer> {

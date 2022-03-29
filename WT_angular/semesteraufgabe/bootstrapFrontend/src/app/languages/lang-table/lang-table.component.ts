@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Directive, EventEmitter, Input, Output, QueryList, ViewChildren } from '@angular/core';
 import { Router } from '@angular/router';
-//import { LangService } from '../../shared/lang.service';
+
 import { BackendService } from '../../shared/backend.service';
 import { Language } from '../../shared/language';
 
@@ -13,7 +13,7 @@ export class LangTableComponent implements OnInit {
   languages!: Language[];
   deleted = false;
 
-  //wann wird eigentlich was wo deklariert???
+
   constructor(private service: BackendService, private router: Router) { }
 
   ngOnInit(): void {
@@ -32,6 +32,7 @@ export class LangTableComponent implements OnInit {
       );
   }
 
+  //Warnung wäre noch schick
   delete(id: string): void {
     this.service.deleteOneLang(id).subscribe(
       (

@@ -1,1 +1,44 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('../node_modules/bootstrap-icons/font/bootstrap-icons.css');
+:root {
+    --hintergrund: pink;
+    --vordergrund: black;
+  }
+
+/* 
+
+
+.card {
+  background-color: #303034;
+}
+
+.card-header {
+  background-color: #7e7987;
+  color: black;
+}
+
+.helloworld {
+  background-color: #282232;
+  color: #d3d1d5;
+  font-size: small;
+} 
+
+a {
+  color: orange;
+}
+
+#developers {
+  color: bisque;
+}
+
+button {
+  font-size: xx-small;
+  
+}
+
+footer {
+  padding-left: 2%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  
+} */

@@ -29,7 +29,7 @@ router.get('/:id', async(req, res) => {
 router.get('/lang/:name', async(req, res) => {
     try {
         const allLanguages = await Language.find({ name: req.params.name }).exec;
-        //await MyModel.find({ name: 'john', age: { $gte: 18 } }).exec();
+        
         console.log(req.params);
         res.send(oneLanguage);
     } catch {

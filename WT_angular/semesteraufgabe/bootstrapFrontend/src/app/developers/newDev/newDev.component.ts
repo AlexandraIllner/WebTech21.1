@@ -30,10 +30,11 @@ export class NewDevComponent implements OnInit {
         nameControl: ['', Validators.required],
 	      firstnameControl: ['', Validators.required], 	
         genderControl: ['', Validators.required],               
-        urlControl: ['', Validators.required]
+        urlControl: ['', Validators.required],
+        collaborationControl: ['', Validators.required]
       }
     );
-    this.developer = { _id: '', name: '', firstname: '', gender: '', url: ''};
+    this.developer = { _id: '', name: '', firstname: '', gender: '', url: '', collaboration: ''};
   }
 
   ngOnInit(): void {
@@ -51,6 +52,7 @@ export class NewDevComponent implements OnInit {
     this.developer.name = values.nameControl;
     this.developer.gender = values.genderControl;
     this.developer.url = values.urlControl;
+    this.developer.collaboration = values.collaborationControl;
 
 
       console.log(this.developer);
