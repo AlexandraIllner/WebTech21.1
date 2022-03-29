@@ -20,9 +20,8 @@ npm install -g @angular/cli@13.2.6
 
 installiert die Version, mit der die Anwendung erstellt wurde. Mit anderen Versionen könnte es zu Problemen kommen.
 
-Zusätzlich muss auf dem System [MongoDB](https://www.mongodb.com/docs/manual/installation/) installiert sein.  
-
-Die entsprechende Datenbank und Collections werden automatisch erstellt. Um vorgenommene Änderungen dauerhaft in der DB zu speichern muss das Skript deaktiviert werden.
+Zusätzlich muss auf dem System [MongoDB](https://www.mongodb.com/docs/manual/installation/) installiert sein.
+Für die initiale Befüllung gibt es leider noch kein Skript.
 
 Nach dem Clonen des Repository in einer IDE oder einer Shell das Verzeichnis programmiersprachen_backend öffnen und  
 
@@ -38,9 +37,6 @@ ng serve
 Die Anwendung lässt sich nun in einem Browser unter localhost:4200 aufrufen.
 
 ## Beschreibung
-
-
-Auf der Landing Page ist derzeit noch nichts zu sehen.
 
 Unter dem Menüpunkt Programmiersprachen findet sich eine Tabelle der bislang erfassten Sprachen mit dem Jahr ihrer Veröffentlichung und der Möglichkeit, einen Eintrag zu bearbeiten oder zu löschen.
 Der Name der Sprache verlinkt zur Detailansicht, dort ist neben weiteren Informationen und dem Hello World-Code der jeweiligen Sprache auch ein Link zu externen Informationsressourcen, auch zu den beteiligten Entwickelnden, zu finden.

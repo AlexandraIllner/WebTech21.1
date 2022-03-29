@@ -37,7 +37,7 @@ export class DevTableComponent implements OnInit {
     this.service.deleteOneDev(id).subscribe(
       (
         response: any) => {
-          console.log('response : ', response);
+          console.log('delete-dev response : ', response);
           if(response.status == 204){
                   console.log(response.status);
                   this.reload(true);

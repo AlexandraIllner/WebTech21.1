@@ -14,7 +14,7 @@ import { NewDevComponent } from './developers/newDev/newDev.component';
 import { LangTableComponent } from './languages/lang-table/lang-table.component';
 import { DevdetailComponent } from './developers/dev-detail/dev-detail.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { TesttableComponent } from './testtable/testtable.component';
+
 import { LangDetailComponent } from './languages/lang-detail/lang-detail.component';
 import { NewComponent } from './languages/new/new.component';
 import { UpdateComponent } from './languages/update/update.component';
@@ -31,7 +31,7 @@ import { UpdateComponent } from './languages/update/update.component';
     DevTableComponent,
     LangTableComponent,
     DevdetailComponent,
-    TesttableComponent,
+    
     LangDetailComponent,
     NewComponent,
     NewDevComponent,

@@ -1,44 +1,86 @@
 /* You can add global styles to this file, and also import other style files */
 @import url('../node_modules/bootstrap-icons/font/bootstrap-icons.css');
 :root {
-    --hintergrund: pink;
-    --vordergrund: black;
+
+    --darkestgrey: #595959;
+    --darkergrey: #7f7f7f;
+    --grey: #a5a5a5;
+    --lightergrey: #cccccc;
+    --lightestgrey: #f2f2f2;
+    --yellow: #faa916;
+    --blue: #33658a;
+    --lightblue: #cdf7f6;
+    --red:#ff1b1c;
+    --green: #99c24d;
   }
 
-/* 
+body {
+ background-color: var(--lightergrey);
+}
 
+#nav {
+  background-color: var(--darkestgrey);
+  
+}
+
+.navbar navbar-expand-lg navbar-light bg-dark {
+  background-color: var(--darkestgrey);
+  
+}
+
+#button {
+  padding-top: 1%;
+}
+
+.container-sm {
+  padding: 2%;
+}
 
 .card {
-  background-color: #303034;
+  background-color: var(--darkergrey);
+  color: var(--lightestgrey);
 }
 
 .card-header {
-  background-color: #7e7987;
-  color: black;
+  background-color: var(--darkestgrey);
+  color: bisque;
+}
+
+.card-body {
+  color: bisque;
 }
 
 .helloworld {
-  background-color: #282232;
-  color: #d3d1d5;
+  background-color: black;
+  color: var(--yellow);
   font-size: small;
 } 
 
+footer {
+  padding-left: 2%;
+  padding-top: 2%;
+  padding-bottom: 2%;  
+}
+
 a {
-  color: orange;
+  color: var(--blue);
+  text-decoration: solid;
+  font-weight: bolder;
 }
 
 #developers {
   color: bisque;
 }
 
-button {
-  font-size: xx-small;
-  
+#pencil {
+  color: var(--blue);  
 }
 
-footer {
-  padding-left: 2%;
-  padding-top: 2%;
-  padding-bottom: 2%;
-  
-} */
+#trash {
+  color: var(--red);
+}
+
+.dropdown-menu {
+  background-color: var(--darkergrey);
+}
+

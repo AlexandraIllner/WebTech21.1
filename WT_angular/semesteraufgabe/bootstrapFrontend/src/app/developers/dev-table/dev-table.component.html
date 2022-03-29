@@ -1,47 +1,45 @@
-<div id="all">
+<div class="container-sm">    
+    <div class="row justify-content-center">
+        <div class="col-sm-6">
+            <h1>Menschen / Organisationen</h1>
+        </div>                
+    </div>  
+    <div class="row justify-content-center">
+        <div class="col-sm-8">
+            <div class="table-responsive">
+                <table class="table table-striped table-hover">                
+                    <caption>Alle <code>Entwickelnden</code></caption>
+                        <thead>
+                            <tr>
+                                <th scope="col">Vorname</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">gender</th>
+                                <th scope="col">Info</th>
+                                <!-- <th scope="col-1">Mitarbeit</th> -->
+                                <th scope="col">bearbeiten</th>
+                                <th scope="col">löschen</th>
+                            </tr>
+                        </thead>
 
-    <div class="container-sm">
-        <h1 class="mb-4">Entwickler*innen, die an den hier gelisteten Programmiersprachen mitarbeiteten </h1>
-        <div class="table-responsive">
-            <!-- <table class="m-3 table table-striped table-hover"> -->
-                <table class="table">
-                <caption>Alle <code>Entwickelnden</code></caption>
-                <thead>
-                    <tr>
-                        <th scope="col-2 ">Vorname</th>
-                        <th scope="col-2 ">Name</th>
-                        <th scope="col-1 ">gender</th>
-                        <th scope="col-1 ">Info</th>
-                        <!-- <th scope="col-1">Mitarbeit</th> -->
-                         <th scope="col ">bearbeiten</th>
-                        <th scope="col ">löschen</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr *ngFor="let developer of developers; let i=index; ">                        
-                        <td>{{ developer.firstname }}</td>
-                        <td>{{ developer.name }}</td>
-                        <td>{{ developer.gender }}</td>
-                        <td>
-                            <a href="{{ developer.url }}">Link</a>                             
-                        </td>  
-<!--                         <td>hier sehr schicke <br>Implementierung einfügen</td>
-                        <td> 
-
-                            
-                        </td>-->
-                        <!-- diese Spalten nur, wenn angemeldet...?-->       
-                        <td>                            
-                            <a [routerLink]="['/developer', developer._id]"> <span id="pencil" class=" bi bi-pencil-square px-5 "></span></a>                           
-                        </td>
-                        <td>
-                            <span (click)="delete(developer._id)" id="trash" class=" bi bi-trash px-5 "></span>
-                        </td>
-                    </tr>
-                </tbody>
-    
-            </table>
+                        <tbody>
+                            <tr *ngFor="let developer of developers; let i=index; ">                        
+                                <td>{{ developer.firstname }}</td>
+                                <td>{{ developer.name }}</td>
+                                <td>{{ developer.gender }}</td>
+                                <td>
+                                    <a href="{{ developer.url }}">Link</a>                             
+                                </td>    
+                                <td>                            
+                                    <a [routerLink]="['/developer', developer._id]"> <span id="pencil" class=" bi bi-pencil-square px-5 "></span></a>                           
+                                </td>
+                                <td>
+                                    <span (click)="delete(developer._id)" id="trash" class=" bi bi-trash px-5 "></span>
+                                </td>
+                            </tr>
+                        </tbody>                    
+                </table>
+            </div>
         </div>
     </div>
-</div>
+
     

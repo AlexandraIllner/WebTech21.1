@@ -21,11 +21,15 @@
                 <label class="col-2 col-form-label" for="gender">Info</label>
                 <input type="gender" class="col-10 form-control" id="gender" placeholder="URL o.ä." formControlName="urlControl">
             </div>
-            <div class="form-group row  justify-content-end">
+            <div id="button">
+                <div class="form-group row">
                 <button type="submit" class="col-4 btn btn-secondary">Aktualisieren</button>
-                <div class="col-2"></div>
+                <div class="col-4"></div>
                 <button type="button" class="col-4 btn btn-secondary" (click)="cancel() ">Abbrechen</button>
             </div>
+            </div>
+
+
         </form>
     </fieldset>
 </main>

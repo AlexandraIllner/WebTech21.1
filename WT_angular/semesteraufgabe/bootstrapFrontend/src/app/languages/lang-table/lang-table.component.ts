@@ -4,6 +4,8 @@ import { Router } from '@angular/router';
 import { BackendService } from '../../shared/backend.service';
 import { Language } from '../../shared/language';
 
+//sorted table-Versuch
+
 @Component({
   selector: 'app-lang-table',
   templateUrl: './lang-table.component.html',

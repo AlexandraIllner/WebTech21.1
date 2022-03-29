@@ -74,7 +74,7 @@ export class BackendService {
 
   //Typ any, weil evtl. kein Dev-Objekt (mehr) vorhanden --> dann error-Objekt. response gibt den HTTP-Status zurück im backend
   deleteOneDev(id: string): Observable<any> {
-    return this.http.delete<any>(this.baseUrl + '/' + id, {observe: 'response'});
+    return this.http.delete<any>(this.baseUrl + 'developers/' + id, {observe: 'response'});
   }
 
 

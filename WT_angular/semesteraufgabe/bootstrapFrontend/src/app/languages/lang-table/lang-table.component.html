@@ -1,56 +1,42 @@
-<div class="container-sm">
+<div class="container-sm">    
     <div class="row justify-content-center">
-
         <div class="col-sm-6">
-            <div class="card">
-                <div class = "card-header">
-                    <h1>Alle Programmiersprachen</h1>
-                </div>
+            <h1>Alle Programmiersprachen</h1>
+        </div>                
+    </div>                
+        <div class="row justify-content-center">
+            <div class="col-sm-8">
                 <div class="table-responsive">
-                    <!-- <table class="m-3 table table-striped table-hover"> -->
-                        <table class="table table-striped">
+                    <table class="table table-striped table-hover">
                         <caption>Alle <code>languages</code></caption>
-                        <thead>
-                            <tr>
-                                <th>Name</th>
-                                <th scope="col ">Jahr</th>
-                                <!-- <th scope="col "><span>Info</span></th> -->
-                                <!-- <th scope="col">Hello World</th> -->
-                                <th>bearbeiten</th>
-                                <th>löschen</th>
-                                
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr id = 'row' *ngFor="let language of languages; ">                        
-                                <td>
-                                    <a [routerLink]="['/language-detail', language._id]" title="Detailangaben">{{language.name }}</a>                                        
-                                </td>
-                                <td>{{ language.year }}</td>
-                                <!-- <td>{{ language.helloworld }}</td>
-                                <td>{{ language.info }}</td> -->
-                                <!-- diese Spalten nur, wenn angemeldet...?-->       
-                                <td>                            
-                                    <a [routerLink]="['/language-update', language._id]"> <span id="pencil" class=" bi bi-pencil-square px-5 "></span></a>
-                                </td>
-                                <td>
-                                    <!-- <ngb-alert [type]="alert.type" (closed)="close(alert)">{{ alert.message }}</ngb-alert>-->
-<!--                                     <p>
-                                        <ngb-alert [dismissible]="false" 
-                                                   type='success'>
-                                          <strong>GeeksforGeeks</strong>
-                                        </ngb-alert>
-                                      </p> -->
-                                    <span (click)="delete(language._id)" id="trash" class=" bi bi-trash px-5 "></span>
-                                </td>
-                            </tr>
-                        </tbody>
-            
+                            <thead >
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Jahr</th>
+                                    <th>bearbeiten</th>
+                                    <th>löschen</th>                                    
+                                </tr>
+                            </thead>  
+                                                      
+                            <tbody>
+                                <tr id = 'row' *ngFor="let language of languages; ">                        
+                                    <td>
+                                        <a [routerLink]="['/language-detail', language._id]" title="Detailangaben">{{language.name }}</a>                                        
+                                    </td>
+                                    <td>{{ language.year }}</td>       
+                                    <td>                            
+                                        <a [routerLink]="['/language-update', language._id]"> <span id="pencil" class=" bi bi-pencil-square px-5 "></span></a>
+                                    </td>
+                                    <td>
+                                        <!-- <ngb-alert [type]="alert.type" (closed)="close(alert)">{{ alert.message }}</ngb-alert>-->                                        
+                                        <span (click)="delete(language._id)" id="trash" class=" bi bi-trash px-5 "></span>
+                                    </td>
+                                </tr>
+                            </tbody>                    
                     </table>
-                </div>
             </div>
         </div>
     </div>
-</div>
+
 
     

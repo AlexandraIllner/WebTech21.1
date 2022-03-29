@@ -6,7 +6,7 @@ import { HomeComponent } from './home/home.component';
 import { DevTableComponent } from './developers/dev-table/dev-table.component';
 import { LangTableComponent } from './languages/lang-table/lang-table.component';
 import { DevdetailComponent } from './developers/dev-detail/dev-detail.component';
-import { TesttableComponent } from './testtable/testtable.component';
+
 import { LangDetailComponent } from './languages/lang-detail/lang-detail.component';
 import { NewComponent } from './languages/new/new.component';
 import { NewDevComponent } from './developers/newDev/newDev.component';
@@ -27,7 +27,6 @@ const routes: Routes = [{
     component: DevdetailComponent
   },
   {
-    //hier Adressierung im Browser?
     path: "newDev",
     component: NewDevComponent
   },
@@ -40,19 +39,12 @@ const routes: Routes = [{
     component: UpdateComponent
   },
   {
-    //hier Adressierung im Browser?
     path: "new",
     component: NewComponent
   }, 
   {
     path: "language-detail/:id",
     component: LangDetailComponent
-  },
- 
-
-  {
-    path: "test",
-    component: TesttableComponent
   }
 ];
   

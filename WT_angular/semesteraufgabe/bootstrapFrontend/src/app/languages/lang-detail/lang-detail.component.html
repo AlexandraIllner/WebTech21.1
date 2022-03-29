@@ -1,37 +1,38 @@
-<div id="background">
 <div class="container-sm">
-    <div class="col-sm-8">
-        <div class="card">
-            <div class="card-header">
-                <h1 *ngIf="language">Details zu {{ language.name }}</h1>
-                <h5 *ngIf="language"> {{language.year}} </h5>
-                <h6>{{language.paradigm}}</h6>
+    <div class="row justify-content-center">
+        <div class="col-sm-8">
+            <div class="card">
+                <div class="card-header">
+                    <h1 *ngIf="language">Details zu {{ language.name }}</h1>
+                    <h5 *ngIf="language"> {{language.year}} </h5>
+                    <h6>{{language.paradigm}}</h6>
+                </div>
+                <div class="card-body">
+                    <h6>Hello World-Code</h6>
+                    <div class="helloworld">
+                        <pre>{{language.helloworld}}
+                        </pre>
+                    </div>
+                        <div id="developers" *ngIf="developers">entwickelt von:
+                            <ul class="developers">
+                                <li class="developer-detail" *ngFor="let developer of developers;">
+                                    <a href="{{developer.url}}" title="Detailangaben">{{developer.name}}</a>
+                                    
+                                </li>
+                            </ul>           
+                        </div>
+                    <a href="{{language.info}}">Mehr Info</a>    
+                </div>
+                    <footer>               
+                        <div>
+                            <button type="button" class="btn btn-secondary btn-lg btn-block" (click)="back() ">Zurück zur Übersicht</button>
+                        </div>
+                    </footer>
             </div>
-            <div class="card-body">
-                <div class="helloworld">
-                    <pre>{{language.helloworld}}
-                    </pre>
-                </div>
-                <div id="developers" *ngIf="developers">entwickelt von:
-                    <ul class="developers">
-                        <li class="developer-detail" *ngFor="let developer of developers;">
-                            <a href="{{developer.url}}" title="Detailangaben">{{developer.name}}</a>
-                            
-                        </li>
-                    </ul>           
-                </div>
-                <a href="{{language.info}}" title="{{language.info}}">Mehr Info</a>
-                
-            </div>
-            <footer>               
-                <div>
-                    <button type="button" class="btn btn-secondary btn-lg btn-block" (click)="back() ">Zurück zur Übersicht</button>
-                </div>
-            </footer>
         </div>
     </div>
 </div>
-</div>
+
 <!-- <main class="d-flex min-vh-100">
     <fieldset class="container  mt-5">
         <legend *ngIf="language" class="mb-4">Details zu {{ language.name }} 
